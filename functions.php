@@ -45,6 +45,8 @@ function schoolsite_theme_setup() {
 		* @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		*/
 	add_theme_support( 'post-thumbnails' );
+	//custom crop sizes
+	add_image_size('blog-post', 400, 200, true);
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
@@ -99,6 +101,10 @@ function schoolsite_theme_setup() {
 			'flex-height' => true,
 		)
 	);
+
+	// ADDING THEME SUPPORT FOR ALIGNWIDE AND ALIGNFULL CLASSES
+	add_theme_support( 'align-wide' );
+    add_theme_support( 'align-full' );
 }
 add_action( 'after_setup_theme', 'schoolsite_theme_setup' );
 
@@ -148,6 +154,68 @@ function schoolsite_theme_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'schoolsite_theme_scripts' );
+
+/**
+ * Register CPT
+ */
+require get_template_directory() . '/inc/custom-post-type.php';
+
+/**
+ * Functions for excerpts
+ */
+//Function for excerpt length:
+function schoolsite_excerpt_length( $length){
+	return 25; 
+}
+add_filter('excerpt_length', 'schoolsite_excerpt_length', 999);
+
+//Function to change [...] to Read More About the Student...
+function schoolsite_excerpt_more($more){
+	$more='... <a href="'.esc_url(get_permalink()).'">Read More About the Student...</a>';
+	return $more;
+}
+add_filter('excerpt_more', 'schoolsite_excerpt_more',10);
+
+/**
+ * Defining block editor template for Student CPT
+ */
+function schoolsite_block_templates(){
+		$post_type_object = get_post_type_object( 'schoolsite-student' );
+		$post_type_object->template = array(
+            array( 
+                'core/paragraph', 
+                array( 
+                    'placeholder' => 'Add student bio here..'
+                ) 
+            ),
+            array( 
+                'core/button', 
+                array( 
+                    'placeholder' => 'Add button portfolio here',
+                ) 
+            ),
+        );
+		$post_type_object->template_lock = 'all';
+	
+}
+add_action( 'init', 'schoolsite_block_templates' );
+
+// if (get_post_type_object( 'schoolsite-student' )){
+// 	add_filter('enter_title_here', function($title, $post){ return 'Add Student';}, 10, 2 );
+// }
+
+/**
+ * Change 'Add title' placeholder to Student CPT 
+ */
+if( is_admin() ) {
+	add_filter( 'enter_title_here', function( $input ) {
+		if( 'schoolsite-student' === get_post_type() ) {
+			return __( 'Add Student Name', 'textdomain' );
+		} else {
+			return $input;
+		}
+	} );
+}
 
 /**
  * Implement the Custom Header feature.
