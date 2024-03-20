@@ -156,7 +156,7 @@ function schoolsite_theme_scripts() {
 add_action( 'wp_enqueue_scripts', 'schoolsite_theme_scripts' );
 
 /**
- * Register CPT
+ * Register CPT Students & Staff
  */
 require get_template_directory() . '/inc/custom-post-type.php';
 
@@ -180,8 +180,8 @@ add_filter('excerpt_more', 'schoolsite_excerpt_more',10);
  * Defining block editor template for Student CPT
  */
 function schoolsite_block_templates(){
-		$post_type_object = get_post_type_object( 'schoolsite-student' );
-		$post_type_object->template = array(
+		$student_post_type_object = get_post_type_object( 'schoolsite-student' );
+		$student_post_type_object->template = array(
             array( 
                 'core/paragraph', 
                 array( 
@@ -195,7 +195,26 @@ function schoolsite_block_templates(){
                 ) 
             ),
         );
-		$post_type_object->template_lock = 'all';
+		$student_post_type_object->template_lock = 'all';
+
+		// define similar rules for the staff cpt block editor
+
+		$staff_post_type_object = get_post_type_object( 'schoolsite-staff' );
+    $staff_post_type_object->template = array(
+        array( 
+            'core/paragraph', 
+            array( 
+                'placeholder' => 'Add staff bio here..'
+            ) 
+        ),
+        array( 
+            'core/button', 
+            array( 
+                'placeholder' => 'Add button portfolio here',
+            ) 
+        ),
+    );
+    $staff_post_type_object->template_lock = 'all';
 	
 }
 add_action( 'init', 'schoolsite_block_templates' );
@@ -208,14 +227,47 @@ add_action( 'init', 'schoolsite_block_templates' );
  * Change 'Add title' placeholder to Student CPT 
  */
 if( is_admin() ) {
-	add_filter( 'enter_title_here', function( $input ) {
-		if( 'schoolsite-student' === get_post_type() ) {
-			return __( 'Add Student Name', 'textdomain' );
-		} else {
-			return $input;
-		}
-	} );
+    add_filter( 'enter_title_here', function( $input ) {
+        if( 'schoolsite-student' === get_post_type() ) {
+            return __( 'Add Student Name', 'textdomain' );
+        } elseif( 'schoolsite-staff' === get_post_type() ) {
+            return __( 'Add Staff Name', 'textdomain' ); // Change placeholder for staff CPT
+        } else {
+            return $input;
+        }
+    } );
 }
+
+// register taxonomies
+
+function custom_taxonomies() {
+    // Register taxonomy for 'schoolsite-student' CPT
+    register_taxonomy(
+        'student_category', // Taxonomy slug
+        'schoolsite-student', // Associated post type slug
+        array(
+            'label' => __( 'Student Categories', 'textdomain' ),
+            'hierarchical' => true, // Set to true for hierarchical taxonomy (like categories)
+            'public' => true,
+            'rewrite' => array( 'slug' => 'student-category' ), // Optional: customize the URL slug
+        )
+    );
+
+    // Register taxonomy for 'schoolsite-staff' CPT
+    register_taxonomy(
+        'staff_position', // Taxonomy slug
+        'schoolsite-staff', // Associated post type slug
+        array(
+            'label' => __( 'Staff Positions', 'textdomain' ),
+            'hierarchical' => false, // Set to false for non-hierarchical taxonomy (like tags)
+            'public' => true,
+            'rewrite' => array( 'slug' => 'staff-position' ), // Optional: customize the URL slug
+        )
+    );
+
+    // You can register more taxonomies here as needed
+}
+add_action( 'init', 'custom_taxonomies' );
 
 /**
  * Implement the Custom Header feature.
