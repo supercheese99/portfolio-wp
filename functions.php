@@ -47,6 +47,7 @@ function schoolsite_theme_setup() {
 	add_theme_support( 'post-thumbnails' );
 	//custom crop sizes
 	add_image_size('blog-post', 400, 200, true);
+	add_image_size ('student-photo', 200, 400, true);
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
