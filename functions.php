@@ -47,6 +47,7 @@ function schoolsite_theme_setup() {
 	add_theme_support( 'post-thumbnails' );
 	//custom crop sizes
 	add_image_size('blog-post', 400, 200, true);
+	add_image_size('student-photo', 200, 400, true);
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
@@ -219,10 +220,6 @@ function schoolsite_block_templates(){
 }
 add_action( 'init', 'schoolsite_block_templates' );
 
-// if (get_post_type_object( 'schoolsite-student' )){
-// 	add_filter('enter_title_here', function($title, $post){ return 'Add Student';}, 10, 2 );
-// }
-
 /**
  * Change 'Add title' placeholder to Student CPT 
  */
@@ -238,36 +235,11 @@ if( is_admin() ) {
     } );
 }
 
-// register taxonomies
+/**
+ * Registering Taxonomies
+ */
+require get_template_directory() . '/inc/taxonomies.php';
 
-function custom_taxonomies() {
-    // Register taxonomy for 'schoolsite-student' CPT
-    register_taxonomy(
-        'student_category', // Taxonomy slug
-        'schoolsite-student', // Associated post type slug
-        array(
-            'label' => __( 'Student Categories', 'textdomain' ),
-            'hierarchical' => true, // Set to true for hierarchical taxonomy (like categories)
-            'public' => true,
-            'rewrite' => array( 'slug' => 'student-category' ), // Optional: customize the URL slug
-        )
-    );
-
-    // Register taxonomy for 'schoolsite-staff' CPT
-    register_taxonomy(
-        'staff_position', // Taxonomy slug
-        'schoolsite-staff', // Associated post type slug
-        array(
-            'label' => __( 'Staff Positions', 'textdomain' ),
-            'hierarchical' => false, // Set to false for non-hierarchical taxonomy (like tags)
-            'public' => true,
-            'rewrite' => array( 'slug' => 'staff-position' ), // Optional: customize the URL slug
-        )
-    );
-
-    // You can register more taxonomies here as needed
-}
-add_action( 'init', 'custom_taxonomies' );
 
 /**
  * Implement the Custom Header feature.
