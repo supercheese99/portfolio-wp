@@ -200,20 +200,8 @@ function schoolsite_block_templates(){
 		// define similar rules for the staff cpt block editor
 
 		$staff_post_type_object = get_post_type_object( 'schoolsite-staff' );
-    $staff_post_type_object->template = array(
-        array( 
-            'core/paragraph', 
-            array( 
-                'placeholder' => 'Add staff bio here..'
-            ) 
-        ),
-        array( 
-            'core/button', 
-            array( 
-                'placeholder' => 'Add button portfolio here',
-            ) 
-        ),
-    );
+    // $staff_post_type_object->template = array(
+    // );
     $staff_post_type_object->template_lock = 'all';
 	
 }
