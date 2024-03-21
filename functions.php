@@ -109,6 +109,16 @@ function schoolsite_theme_setup() {
 }
 add_action( 'after_setup_theme', 'schoolsite_theme_setup' );
 
+// removing the archives word from page title
+
+function custom_archive_title( $title ) {
+    if ( is_category() || is_tag() || is_tax() || is_date() ) {
+        $title = single_cat_title( '', false );
+    }
+    return $title;
+}
+add_filter( 'get_the_archive_title', 'custom_archive_title' );
+
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
