@@ -53,6 +53,7 @@ function schoolsite_theme_setup() {
 	register_nav_menus(
 		array(
 			'menu-1' => esc_html__( 'Primary', 'schoolsite-theme' ),
+			'footer-1' => esc_html__( 'Footer Menu Location', 'schoolsite-theme' ),
 		)
 	);
 
@@ -240,6 +241,44 @@ if( is_admin() ) {
  */
 require get_template_directory() . '/inc/taxonomies.php';
 
+// 
+/**
+ * Get taxonomies terms links.
+ *
+ * @see get_object_taxonomies()
+ */
+function wpdocs_custom_taxonomies_terms_links() {
+	// Get post by post ID.
+	if ( ! $post = get_post() ) {
+		return '';
+	}
+
+	// Get post type by post.
+	$post_type = $post->post_type;
+
+	// Get post type taxonomies.
+	$taxonomies = get_object_taxonomies( $post_type, 'objects' );
+
+	$out = array();
+
+	foreach ( $taxonomies as $taxonomy_slug => $taxonomy ){
+
+		// Get the terms related to post.
+		$terms = get_the_terms( $post->ID, $taxonomy_slug );
+
+		if ( ! empty( $terms ) ) {
+			$out[] = "<p>Specialty: </p>\n<ul>";
+			foreach ( $terms as $term ) {
+				$out[] = sprintf( '<li><a href="%1$s">%2$s</a></li>',
+					esc_url( get_term_link( $term->slug, $taxonomy_slug ) ),
+					esc_html( $term->name )
+				);
+			}
+			$out[] = "\n</ul>\n";
+		}
+	}
+	return implode( '', $out );
+}
 
 /**
  * Implement the Custom Header feature.
