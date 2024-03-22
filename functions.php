@@ -109,6 +109,16 @@ function schoolsite_theme_setup() {
 }
 add_action( 'after_setup_theme', 'schoolsite_theme_setup' );
 
+// removing the archives word from page title
+
+function custom_archive_title( $title ) {
+    if ( is_category() || is_tag() || is_tax() || is_date() ) {
+        $title = single_cat_title( '', false );
+    }
+    return $title;
+}
+add_filter( 'get_the_archive_title', 'custom_archive_title' );
+
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
@@ -201,20 +211,8 @@ function schoolsite_block_templates(){
 		// define similar rules for the staff cpt block editor
 
 		$staff_post_type_object = get_post_type_object( 'schoolsite-staff' );
-    $staff_post_type_object->template = array(
-        array( 
-            'core/paragraph', 
-            array( 
-                'placeholder' => 'Add staff bio here..'
-            ) 
-        ),
-        array( 
-            'core/button', 
-            array( 
-                'placeholder' => 'Add button portfolio here',
-            ) 
-        ),
-    );
+    // $staff_post_type_object->template = array(
+    // );
     $staff_post_type_object->template_lock = 'all';
 	
 }
