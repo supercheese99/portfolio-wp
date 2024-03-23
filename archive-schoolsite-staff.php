@@ -23,16 +23,18 @@ get_header();
 
 			<?php
 			/* Start the Loop */
+
+				
+
 			while ( have_posts() ) :
 				the_post();
+				the_post_thumbnail('staff-photo');
+				?>
 
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
-
+				<p class="staff-bio"><?php the_field('staff_bio') ?></p>
+				<p class="staff-courses"><?php the_field('staff_courses') ?></p>
+				<a class="staff-links"><?php the_field('staff_link') ?></a>
+			<?php
 			endwhile;
 
 			the_posts_navigation();
@@ -43,6 +45,7 @@ get_header();
 
 		endif;
 		?>
+
 
 	</main><!-- #main -->
 
