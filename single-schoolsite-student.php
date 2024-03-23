@@ -25,13 +25,20 @@ get_header();
 				)
 			);
 
+<<<<<<< HEAD
 		
 
+=======
+			
+>>>>>>> 6e00116121fe5723221313c2f67d4ebc41193e90
 		endwhile; // End of the loop.
 		?>
 
 	</main><!-- #main -->
 
 <?php
+<<<<<<< HEAD
 get_sidebar();
+=======
+>>>>>>> 6e00116121fe5723221313c2f67d4ebc41193e90
 get_footer();

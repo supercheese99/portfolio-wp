@@ -42,9 +42,12 @@ get_header();
 			get_template_part( 'template-parts/content', 'none' );
 
 		endif;
+<<<<<<< HEAD
 
 	
 
+=======
+>>>>>>> 6e00116121fe5723221313c2f67d4ebc41193e90
 		?>
 
 	</main><!-- #main -->
