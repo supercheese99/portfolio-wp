@@ -47,7 +47,6 @@ function schoolsite_theme_setup() {
 	add_theme_support( 'post-thumbnails' );
 	//custom crop sizes
 	add_image_size('blog-post', 400, 200, true);
-
 	add_image_size('student-photo', 200, 400, true);
 	add_image_size('staff-photo', 400, 200, true);
 
@@ -120,6 +119,19 @@ function custom_archive_title( $title ) {
     return $title;
 }
 add_filter( 'get_the_archive_title', 'custom_archive_title' );
+
+// logo setup
+function schoolsite_logo_setup() {
+	$defaults = array(
+		'height'               => 100,
+		'width'                => 400,
+		'flex-height'          => true,
+		'flex-width'           => true,
+		'unlink-homepage-logo' => true, 
+	);
+	add_theme_support( 'custom-logo', $defaults );
+}
+add_action( 'after_setup_theme', 'schoolsite_logo_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.

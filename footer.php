@@ -13,6 +13,9 @@
 
 	<footer id="colophon" class="site-footer">
 		<div class="site-info">
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+				<img src="https://guialagyap.com/schoolsite/wp-content/uploads/2024/03/monster-logo.png" alt="monster-logo">
+			</a>
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'schoolsite-theme' ) ); ?>">
 				<?php
 				/* translators: %s: CMS name, i.e. WordPress. */
