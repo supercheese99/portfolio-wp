@@ -47,13 +47,18 @@ function schoolsite_theme_setup() {
 	add_theme_support( 'post-thumbnails' );
 	//custom crop sizes
 	add_image_size('blog-post', 400, 200, true);
-	add_image_size('student-photo', 200, 400, true);
 	add_image_size('staff-photo', 400, 200, true);
+
+	add_image_size('student-photo', 300, 400, true);
+	add_image_size('tax-photo', 200, 300, true);
+
+
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
 			'menu-1' => esc_html__( 'Primary', 'schoolsite-theme' ),
+			'footer-1' => esc_html__( 'Footer Menu Location', 'schoolsite-theme' ),
 		)
 	);
 
@@ -169,6 +174,15 @@ add_action( 'widgets_init', 'schoolsite_theme_widgets_init' );
  * Enqueue scripts and styles.
  */
 function schoolsite_theme_scripts() {
+	//enqueue google font
+	wp_enqueue_style(
+		'schoolsite-googlefonts', //unique handle
+		'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Slab:wght@100..900&display=swap', //url to css
+		array(), //dependencies
+		null, //version, set null for google fonts
+		'all' //media
+	);
+
 	wp_enqueue_style( 'schoolsite-theme-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'schoolsite-theme-style', 'rtl', 'replace' );
 
@@ -252,6 +266,44 @@ if( is_admin() ) {
  */
 require get_template_directory() . '/inc/taxonomies.php';
 
+// 
+/**
+ * Get taxonomies terms links.
+ *
+ * @see get_object_taxonomies()
+ */
+function wpdocs_custom_taxonomies_terms_links() {
+	// Get post by post ID.
+	if ( ! $post = get_post() ) {
+		return '';
+	}
+
+	// Get post type by post.
+	$post_type = $post->post_type;
+
+	// Get post type taxonomies.
+	$taxonomies = get_object_taxonomies( $post_type, 'objects' );
+
+	$out = array();
+
+	foreach ( $taxonomies as $taxonomy_slug => $taxonomy ){
+
+		// Get the terms related to post.
+		$terms = get_the_terms( $post->ID, $taxonomy_slug );
+
+		if ( ! empty( $terms ) ) {
+			$out[] = "<p>Specialty: </p>\n<ul>";
+			foreach ( $terms as $term ) {
+				$out[] = sprintf( '<li><a href="%1$s">%2$s</a></li>',
+					esc_url( get_term_link( $term->slug, $taxonomy_slug ) ),
+					esc_html( $term->name )
+				);
+			}
+			$out[] = "\n</ul>\n";
+		}
+	}
+	return implode( '', $out );
+}
 
 /**
  * Implement the Custom Header feature.

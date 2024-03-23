@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying staff pages
+ * The template for displaying archive pages
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -16,26 +16,18 @@ get_header();
 
 			<header class="page-header">
 				<?php
-				the_title( '<h1 class="page-title">', '</h1>' );
-				the_content( '<div class="description">', '</div>' );
+				the_archive_title( '<h1 class="page-title">', '</h1>' );
+				the_archive_description( '<div class="archive-description">', '</div>' );
 				?>
 			</header><!-- .page-header -->
 
 			<?php
 			/* Start the Loop */
-
-				
-
 			while ( have_posts() ) :
-
 				the_post();
-				// the_post_thumbnail('staff-photo');
-				?>
 
-				<p class="staff-bio"><?php the_field('staff_bio') ?></p>
-				<p class="staff-courses"><?php the_field('staff_courses') ?></p>
-				<a class="staff-links"><?php the_field('staff_link') ?></a>
-			<?php
+				get_template_part( 'template-parts/content', get_post_type() );
+
 			endwhile;
 
 			the_posts_navigation();
@@ -47,9 +39,8 @@ get_header();
 		endif;
 		?>
 
-
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
+
 get_footer();

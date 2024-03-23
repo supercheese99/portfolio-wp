@@ -389,7 +389,7 @@ select,
 optgroup,
 textarea {
 	color: #404040;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: "Open Sans", sans-serif;
 	font-size: 1rem;
 	line-height: 1.5;
 }
@@ -401,6 +401,7 @@ h4,
 h5,
 h6 {
 	clear: both;
+	font-family: "Roboto Slab", serif;
 }
 
 p {
@@ -513,7 +514,52 @@ figure {
 
 table {
 	margin: 0 0 1.5em;
-	width: 100%;
+	width: 80%;
+}
+
+td {
+	border-right: 1px solid black;
+}
+
+.site-footer {
+	background-color: #492E87;
+	color: white;
+	padding: 1.5rem;
+	margin: 0;
+	text-align: center;
+}
+@media (min-width: 50em) {
+	.site-footer {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+}
+.site-footer .site-info a {
+	color: white;
+	text-decoration: none;
+}
+.site-footer .site-info a:hover {
+	background-color: #6420AA;
+}
+.site-footer .footer-menu h4 {
+	margin: 0 auto 0.5rem;
+}
+.site-footer .footer-menu a {
+	color: white;
+	text-decoration: none;
+}
+.site-footer .footer-menu a:hover {
+	background-color: #6420AA;
+}
+.site-footer .footer-menu ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.site-header {
+	background-color: #492E87;
+	padding: 1rem;
 }
 
 /* Links
@@ -664,6 +710,17 @@ textarea {
 .menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
+	cursor: pointer;
+}
+.menu-toggle a,
+.main-navigation.toggled ul a {
+	color: white;
+}
+
+#site-navigation button {
+	background-color: blue;
+	border: none;
+	outline: none;
 }
 
 @media screen and (min-width: 37.5em) {
@@ -722,26 +779,81 @@ textarea {
 	margin: 0 0 1.5em;
 }
 
-.alignwide,
-.alignfull {
+.site-main {
+	margin: 1rem;
+}
+
+.content-wrapper {
+	padding: 1rem;
+	margin: 1rem;
+}
+.content-wrapper .entry-content {
 	display: block;
-	width: 100vw;
-	max-width: 100vw;
-	margin: 2rem calc(50% - 50vw);
+	margin: 1.25rem;
 }
-
-.alignwide {
-	width: auto;
-	margin: 0 auto;
-}
-
-@media only screen and (min-width: 1300px) {
-	.alignwide {
-		max-width: 1300px;
-		margin-left: -150px;
-		margin-right: -150px;
+@media (min-width: 50em) {
+	.content-wrapper .entry-content {
+		display: grid;
+		grid-template-areas: "photo bio";
+		justify-content: center;
+		align-items: start;
+		gap: 2rem;
+	}
+	.content-wrapper .entry-content .student-photo {
+		grid-area: photo;
+	}
+	.content-wrapper .entry-content .student-bio {
+		grid-area: bio;
 	}
 }
+
+@media (min-width: 50em) {
+	#single-student-page .content-wrapper .entry-content {
+		display: grid;
+		grid-template-areas: "bio photo";
+		justify-content: center;
+		align-items: start;
+		gap: 2rem;
+	}
+	#single-student-page .content-wrapper .entry-content .student-photo {
+		grid-area: photo;
+	}
+	#single-student-page .content-wrapper .entry-content .student-bio {
+		grid-area: bio;
+	}
+}
+
+.archive-student .entry-content {
+	display: block;
+}
+.archive-student .student-tax {
+	margin-left: 1.25rem;
+}
+.archive-student .student-tax p {
+	margin: 0;
+}
+.archive-student .student-tax ul {
+	list-style: none;
+	padding-left: 0;
+	margin: 0;
+}
+.archive-student .student-tax ul li a {
+	text-decoration: none;
+}
+
+.student-archive-wrapper {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: auto;
+}
+@media (min-width: 56.25em) {
+	.student-archive-wrapper {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: auto;
+	}
+}
+
 /* Comments
 --------------------------------------------- */
 .comment-content a {
@@ -931,5 +1043,26 @@ textarea {
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 1.5em;
+}
+
+.alignwide,
+.alignfull {
+	display: block;
+	width: 100vw;
+	max-width: 100vw;
+	margin: 2rem calc(50% - 50vw);
+}
+
+.alignwide {
+	width: auto;
+	margin: 0 auto;
+}
+
+@media only screen and (min-width: 1300px) {
+	.alignwide {
+		max-width: 1300px;
+		margin-left: -150px;
+		margin-right: -150px;
+	}
 }
 /*# sourceMappingURL=sass/style.css.map */

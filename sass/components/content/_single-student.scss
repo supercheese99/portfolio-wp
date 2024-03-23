@@ -1,0 +1,53 @@
+.site-main{
+    margin:1rem;
+}
+
+.content-wrapper{
+    padding: 1rem;
+    margin: 1rem;
+
+    .entry-content{
+        
+        display: block;
+        margin:1.25rem;
+
+        @media(min-width:50em) {   
+            .student-photo{
+                grid-area: photo;
+            }
+
+            .student-bio{
+                grid-area: bio;
+            }
+
+            display: grid;
+            grid-template-areas: 'photo bio';
+            justify-content: center;
+            align-items: start;
+            gap: 2rem;
+        }
+    }
+}
+
+
+#single-student-page{
+    .content-wrapper{
+        .entry-content{
+            @media(min-width:50em) {   
+                .student-photo{
+                    grid-area: photo;
+                }
+
+                .student-bio{
+                    grid-area: bio;
+                }
+
+                display: grid;
+                grid-template-areas: 'bio photo';
+                justify-content: center;
+                align-items: start;
+                gap: 2rem;
+            }
+        }
+    }   
+}

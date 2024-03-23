@@ -73,6 +73,17 @@
 .menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
+	cursor: pointer;
+	
+	a{
+		color: white;
+	}
+}
+
+#site-navigation button{
+	background-color: blue;
+	border: none;
+	outline: none;
 }
 
 @media screen and (min-width: 37.5em) {

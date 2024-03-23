@@ -30,6 +30,7 @@ get_header();
 		<?php
 			// Check rows exists.
 			if( have_rows('schedule') ):
+				echo "<table>";
 
 				// Loop through rows.
 				while( have_rows('schedule') ) : the_row();
@@ -39,24 +40,20 @@ get_header();
 					$sub_course = get_sub_field('course');
 					$sub_instructor = get_sub_field('instructor');
 
-					echo "<table>";
+					echo "<tr>";
 					
 					echo "<td>".$sub_date."</td>";
 					echo "<td>".$sub_course."</td>";
 					echo "<td>".$sub_instructor."</td>";
 
-					// echo "<tr>";
-					// echo "<td>".$sub_date."</td>";
-					// echo "</tr>";
-
-
-					echo "</table>";
+					echo "</tr>";
 					// Do something, but make sure you escape the value if outputting directly...
 
 				// End loop.
 				endwhile;
 
 			// No value.
+			echo "<table>";
 			else :
 				// Do something...
 			endif;
@@ -65,5 +62,4 @@ get_header();
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();

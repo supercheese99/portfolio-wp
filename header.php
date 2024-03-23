@@ -46,9 +46,6 @@
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation">
-		<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-				<img src="https://guialagyap.com/schoolsite/wp-content/uploads/2024/03/monster-logo.png" alt="monster-logo">
-			</a>
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'schoolsite-theme' ); ?></button>
 			<?php
 			wp_nav_menu(

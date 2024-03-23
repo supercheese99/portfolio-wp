@@ -14,24 +14,46 @@ get_header();
 
 		<?php
 		while ( have_posts() ) :
-			the_post();
+			the_post();?>
 
-			get_template_part( 'template-parts/content', get_post_type() );
+			<div id="single-student-page">
+			<?php
+				get_template_part( 'template-parts/content', get_post_type() ); ?>
+			</div>
 
-			the_post_navigation(
-				array(
-					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'schoolsite-theme' ) . '</span> <span class="nav-title">%title</span>',
-					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'schoolsite-theme' ) . '</span> <span class="nav-title">%title</span>',
-				)
-			);
+			<section class='more-students'>
+				<h4>More Students:</h4>
+				<?php
+				$terms = get_the_terms( $post->ID, 'taxonomy' );
 
+				$args = array(
+								'post_type'      => 'schoolsite-student',
+								'posts_per_page' => -1,
+								'order'          => 'ASC',
+								'orderby'        => 'title',
+								
+															
+							);
+					$query = new WP_Query( $args );
+					
+					if ( $query -> have_posts() ){
+						while ( $query -> have_posts() ) {
+							$query -> the_post();
+							foreach($terms as $term){
+								the_title();
+							}
+						}
+						wp_reset_postdata();
+					}
+				?>
+			</section>
 		
 
-		endwhile; // End of the loop.
+		<?php endwhile; // End of the loop.
 		?>
 
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
+
 get_footer();
