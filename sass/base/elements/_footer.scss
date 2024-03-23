@@ -1,0 +1,45 @@
+.site-footer{
+    background-color: $color__background-footer-header;
+    color: white;
+    padding: 1.5rem;
+    margin:0;
+    text-align: center;
+
+    @media(min-width: 50em){
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .site-info{
+
+        a{
+        color:white;
+        text-decoration: none;
+        }
+
+        a:hover{
+            background-color: #6420AA ;
+        }        
+    }
+
+    .footer-menu{
+        h4{
+            margin:0 auto 0.5rem;
+        }
+        a{
+            color:white;
+            text-decoration: none;
+            }
+    
+            a:hover{
+                background-color: #6420AA ;
+            }  
+
+        ul{
+            list-style: none;
+            margin:0;
+            padding:0;
+        }
+
+    }   
+}

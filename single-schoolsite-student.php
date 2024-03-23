@@ -14,9 +14,12 @@ get_header();
 
 		<?php
 		while ( have_posts() ) :
-			the_post();
+			the_post();?>
 
-			get_template_part( 'template-parts/content', get_post_type() ); ?>
+			<div id="single-student-page">
+			<?php
+				get_template_part( 'template-parts/content', get_post_type() ); ?>
+			</div>
 
 			<section class='more-students'>
 				<h4>More Students:</h4>

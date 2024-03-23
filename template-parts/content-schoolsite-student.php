@@ -2,7 +2,7 @@
 // Template for single student
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" class="content-wrapper">
 	<header class="entry-header">
 		<?php
 		if ( is_singular()) :
@@ -17,7 +17,12 @@
 	<div class="entry-content">
 		
 		<div class='student-photo'>
-			<?php the_post_thumbnail('student-photo'); ?>
+			<?php 
+			if(is_tax()){
+				the_post_thumbnail('tax-photo');
+			}else{
+				the_post_thumbnail('student-photo');
+			}?>
 		</div>
 
 		<div class='student-bio'>
@@ -29,6 +34,13 @@
 			}
 			
 		?></div>
+
+		<?php 
+			if(is_post_type_archive()){?>
+				<span class='student-tax'><?php
+					echo wpdocs_custom_taxonomies_terms_links();
+				?></span>
+			<?php } ?>
 	</div>
 	
 

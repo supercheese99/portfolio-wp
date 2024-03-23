@@ -11,7 +11,6 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
-
 			<header class="page-header">
 				<?php
 				the_archive_title( '<h1 class="page-title">', '</h1>' );
@@ -19,6 +18,7 @@ get_header();
 				?>
 			</header><!-- .page-header -->
 
+			
 			<?php
 
 				$params = array(
@@ -31,14 +31,12 @@ get_header();
 			$query = new WP_Query( $params );
 
 			if ( $query->have_posts() ) : ?>
-				<section>
+				<section class='student-archive-wrapper'>
 					<?php
 					while( $query->have_posts() ) :
 						$query->the_post(); ?>
-						<article>
-						<?php get_template_part( 'template-parts/content', get_post_type() ); 
-						echo wpdocs_custom_taxonomies_terms_links();
-						?>
+						<article class='archive-student'>
+							<?php get_template_part( 'template-parts/content', get_post_type() ); ?>
 						</article>
 					<?php
 					endwhile;
@@ -51,7 +49,7 @@ get_header();
 
 			
 		?>
-			
+	
 
 	</main><!-- #main -->
 

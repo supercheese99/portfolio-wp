@@ -25,9 +25,12 @@
 			printf( esc_html__( 'Theme: %1$s by %2$s.', 'schoolsite-theme' ), 'schoolsite-theme', '<a href="https://guialagyap.com/">Guia Lagyap, Oliwia Wegner</a>' );
 			?>
 			<p>Created by: Guia Lagyap & Oliwia Wagner (for educational purposes)</p>
+		</div><!-- .site-info -->
 
-			<div class="footer-menu">
-			<?php
+		<div class="footer-menu">
+
+				<h4>Links:</h4>
+				<?php
 				wp_nav_menu(
 					array(
 						'theme_location' => 'footer-1',
@@ -37,7 +40,6 @@
 				?>
 				
 			</div><!-- .footer-menus -->
-		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
