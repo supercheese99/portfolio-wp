@@ -31,6 +31,9 @@ get_header();
 			// Check rows exists.
 			if( have_rows('schedule') ):
 				echo "<table>";
+				echo "<th>Date</th>";
+				echo "<th>Course</th>";
+				echo "<th>Instructor</th>";
 
 				// Loop through rows.
 				while( have_rows('schedule') ) : the_row();

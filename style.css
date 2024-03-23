@@ -515,10 +515,12 @@ figure {
 table {
 	margin: 0 0 1.5em;
 	width: 80%;
+	text-align: center;
 }
 
 td {
 	border-right: 1px solid black;
+	border-bottom: 1px solid black;
 }
 
 .site-footer {
@@ -531,7 +533,7 @@ td {
 @media (min-width: 50em) {
 	.site-footer {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: 1fr 1fr 1fr;
 	}
 }
 .site-footer .site-info a {

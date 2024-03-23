@@ -12,10 +12,12 @@
 ?>
 
 	<footer id="colophon" class="site-footer">
-		<div class="site-info">
+		<div class="site-logo">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
 				<img src="https://guialagyap.com/schoolsite/wp-content/uploads/2024/03/cropped-Untitled-1.png" alt="monster-logo">
 			</a>
+		</div>
+		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'schoolsite-theme' ) ); ?>">
 				<?php
 				/* translators: %s: CMS name, i.e. WordPress. */
