@@ -1,0 +1,21 @@
+@use 'variables.scss';
+
+#section-26 {
+    height: 90dvh;
+    padding-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // align-items: center;
+
+    .div-for-26 {
+        display: flex;
+        justify-content: space-evenly;
+
+        .text-dontainer{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+}

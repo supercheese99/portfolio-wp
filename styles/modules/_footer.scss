@@ -1,0 +1,18 @@
+@use 'variables.scss';
+
+footer {
+    background-color: #B6E0FF;
+    position: relative;
+    bottom: 0;
+
+    .footer-copyright {
+        
+        p {
+            margin: 0;
+            padding-bottom: 1rem;
+            text-align: center;
+            background-color: #B6E0FF;
+        }
+    }
+
+}

@@ -1,62 +1,35 @@
 <?php
-/**
- * The template for displaying all pages
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site may use a
- * different template.
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package School_Theme
- */
+/*
+Template Name: One Page Template
+*/
 
-get_header();
-?>
+get_header(); ?>
 
-	<main id="primary" class="site-main">
+<div id="content" class="site-content">
+    <?php
+    // Defining the pages to include as sections
+    $pages = array( 26, 6, 9, 11 );
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+    foreach ( $pages as $page_id ) {
+        $post = get_post( $page_id );
+        setup_postdata( $post ); ?>
 
-			get_template_part( 'template-parts/content', 'page' );?>
+        <section id="section-<?php echo $page_id; ?>" class="one-page-section">
+            <?php if ( $page_id !== 26 ) : // Exclude the title for the landing page ?>
+                <h2><?php echo get_the_title( $page_id ); ?></h2>
+            <?php endif; ?>
+            <div class="div-for-<?php echo $page_id; ?>">
+                <?php 
+                // Include the section content from corresponding PHP file
+                get_template_part( 'section', $page_id ); 
+                ?>
+                <!-- Display the content of the page from the database -->
+                <div><?php echo apply_filters( 'the_content', $post->post_content ); ?></div>
+            </div>
+        </section>
 
-		<section class='home-blog'>
-			<?php
-			$params = array(
-				'post_type' => 'post',
-				'posts_per_page' => 3,
-			);
+        <?php wp_reset_postdata();
+    } ?>
+</div>
 
-			$query_blog = new WP_Query($params);
-			if ($query_blog -> have_posts()){
-				while ($query_blog -> have_posts()){
-					$query_blog -> the_post();
-					?>
-					<article>
-						<a class='post-thumb' href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
-							<?php
-							the_post_thumbnail('blog-post');
-							?>
-							<h4><?php the_title(); ?></h4>
-						</a>
-					</article>
-					<?php
-				}
-				wp_reset_postdata();
-			}
-			?>
-
-		</section>
-			
-
-		<?php
-		endwhile; // End of the loop.
-		?>
-
-	</main><!-- #main -->
-
-<?php
-get_footer();
+<?php get_footer(); ?>

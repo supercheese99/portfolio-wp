@@ -1,0 +1,11 @@
+// importing modules
+@use './modules/body';
+@use './modules/variables';
+@use './modules/header';
+@use './modules/footer';
+
+// section modules
+@use './modules/section-6';
+@use './modules/section-9';
+@use './modules/section-11';
+@use './modules/section-26';
