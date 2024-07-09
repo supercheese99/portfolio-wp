@@ -92,7 +92,7 @@ function my_portfolio_scripts() {
     // Enqueue Google Fonts and custom stylesheet
     wp_enqueue_style(
         'my-portfolio-googlefonts',
-        'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Slab:wght@100..900&display=swap',
+        'https://fonts.googleapis.com/css2?family=Danfo&family=Dosis:wght@200..800&display=swap',
         array(),
         null,
         'all'
@@ -107,9 +107,24 @@ function my_portfolio_scripts() {
         'all'
     );
 
-    wp_enqueue_script( 'my-portfolio-navigation', get_template_directory_uri() . '/js/navigation.js', array(), true );
+    wp_enqueue_script( 
+        'my-portfolio-navigation', 
+        get_template_directory_uri() . '/js/navigation.js', 
+        array(), 
+        true
+    );
 }
 add_action( 'wp_enqueue_scripts', 'my_portfolio_scripts' );
+
+// defering the navigation script
+function add_defer_attribute($tag, $handle) {
+
+    if ('my-portfolio-navigation' === $handle) {
+        return str_replace(' src', ' defer src', $tag);
+    }
+    return $tag;
+}
+add_filter('script_loader_tag', 'add_defer_attribute', 10, 2);
 
 
  // Register Projects CPT

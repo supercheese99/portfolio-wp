@@ -1,32 +1,53 @@
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Dosis", sans-serif;
   margin: 0;
+  color: #291F1F;
+  background-image: url("../media/7863.jpg");
+  background-size: cover;
 }
 body section {
-  padding: 0rem 2rem;
+  padding: 0rem 1rem;
 }
 body h1 {
   margin: 0;
   font-size: 3rem;
+  font-family: "Danfo", serif;
+  text-shadow: 0px 1px 5px pink;
 }
-body h2, body h3 {
+body h2 {
+  font-family: "Danfo", serif;
   margin: 0;
+  font-size: 2rem;
+  text-shadow: 0px 1px 5px pink;
+}
+body h3 {
+  margin: 0;
+}
+body a {
+  color: #291F1F;
 }
 
 header {
+  position: sticky;
+  top: 0;
+  z-index: 99;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   width: 100dvw;
-  background-color: pink;
+  height: 10dvh;
+  background-color: #F9F4F4;
   box-shadow: 0px 4px 5px 0px rgb(186, 186, 186);
 }
-header .site-branding a {
-  font-size: 2rem;
-  text-decoration: none;
-  color: black;
+header .site-branding {
+  padding-left: 1rem;
 }
-header .site-branding .site-description {
-  font-size: 1rem;
+header .site-branding a {
+  font-size: 1.25rem;
+  text-decoration: none;
+  font-family: "Danfo", serif;
+}
+header .main-navigation {
+  width: 20dvw;
 }
 @media (min-width: 800px) {
   header .main-navigation {
@@ -36,15 +57,44 @@ header .site-branding .site-description {
 }
 header .main-navigation .menu-toggle {
   display: block;
+  width: 4rem;
+  height: auto;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+header .main-navigation .menu-toggle svg {
+  fill: #291F1F;
 }
 @media (min-width: 800px) {
   header .main-navigation .menu-toggle {
     display: none;
   }
 }
+header .main-navigation .menu-navigation-container {
+  display: none;
+  position: relative;
+  top: -13%;
+  left: -110%;
+  width: 30dvw;
+  height: 90dvh;
+  background-color: #F9F4F4;
+  padding: 1rem 2rem;
+  box-shadow: 0px 4px 5px 0px rgb(186, 186, 186);
+}
+header .main-navigation .menu-navigation-container.toggled {
+  display: block;
+}
 header .main-navigation .menu-navigation-container ul {
-  padding: 0;
+  padding: 0rem;
   list-style: none;
+  height: 90dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+header .main-navigation .menu-navigation-container ul li {
+  margin-bottom: 1rem;
 }
 @media (min-width: 800px) {
   header .main-navigation .menu-navigation-container ul li {
@@ -54,12 +104,31 @@ header .main-navigation .menu-navigation-container ul {
 }
 header .main-navigation .menu-navigation-container ul a {
   text-decoration: none;
-  color: black;
+  color: #291F1F;
   text-transform: uppercase;
+  font-size: 2rem;
+}
+header .main-navigation .menu-navigation-container ul a:hover {
+  text-decoration: line-through;
+}
+header .main-navigation .menu-navigation-container ul a:active {
+  text-decoration: line-through;
+}
+@media (min-width: 768px) {
+  header .main-navigation .menu-toggle {
+    display: none;
+  }
+  header .main-navigation .menu-navigation-container {
+    display: block;
+    position: relative;
+    top: auto;
+    width: auto;
+    left: auto;
+    box-shadow: none;
+  }
 }
 
 footer {
-  background-color: #B6E0FF;
   position: relative;
   bottom: 0;
 }
@@ -67,11 +136,32 @@ footer .footer-copyright p {
   margin: 0;
   padding-bottom: 1rem;
   text-align: center;
-  background-color: #B6E0FF;
 }
 
 #section-6 {
-  height: 100dvh;
+  height: 200dvh;
+  margin: 0rem 1rem;
+}
+#section-6 h2 {
+  text-align: center;
+  background-color: #F9F4F4;
+  box-shadow: 10px 10px 5px -5px #291F1F;
+  border-radius: 10px;
+}
+#section-6 .div-for-6 {
+  height: 200dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+#section-6 .div-for-6 .about-me {
+  background-color: #F9F4F4;
+  box-shadow: 0px 4px 5px 0px rgb(186, 186, 186);
+  border-radius: 10px;
+  padding: 1rem;
+}
+#section-6 .div-for-6 h3 {
+  text-align: center;
 }
 
 #section-9 {
@@ -79,8 +169,22 @@ footer .footer-copyright p {
 }
 
 #section-11 {
-  height: 100dvh;
-  background-color: #B6E0FF;
+  height: 50dvh;
+  padding-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+#section-11 .div-for-11 {
+  display: flex;
+  justify-content: space-evenly;
+}
+#section-11 .div-for-11 svg {
+  width: 10dvw;
+  height: auto;
+}
+#section-11 h2 {
+  text-align: center;
 }
 
 #section-26 {
@@ -90,13 +194,25 @@ footer .footer-copyright p {
   flex-direction: column;
   justify-content: center;
 }
-#section-26 .div-for-26 {
-  display: flex;
-  justify-content: space-evenly;
+#section-26 .div-for-26 .text-container {
+  position: relative;
+  text-align: center;
+  background-color: #F9F4F4;
+  border-radius: 1rem;
+  box-shadow: 10px 10px 5px -5px #291F1F;
+  padding: 1rem;
+  opacity: 0.95;
 }
-#section-26 .div-for-26 .text-dontainer {
-  display: flex;
-  flex-direction: column;
+#section-26 .div-for-26 .image-container {
+  width: 50dvw;
+  position: absolute;
+  top: 20%;
+  left: 25%;
+}
+#section-26 .div-for-26 .image-container img {
+  width: 50dvw;
+  border-radius: 50%;
+  box-shadow: 10px 10px 5px -5px #291F1F;
 }
 
 /*# sourceMappingURL=styles.css.map */

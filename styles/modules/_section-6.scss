@@ -1,5 +1,33 @@
 @use 'variables.scss';
 
 #section-6 {
-    height: 100dvh;
+    height: 200dvh;
+    margin: 0rem 1rem;
+    
+    h2 {
+        text-align: center;
+        background-color: variables.$background-color;
+        box-shadow: variables.$shadow-dark;
+        border-radius: 10px;
+    }
+
+    .div-for-6 {
+        height: 200dvh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+        .about-me {
+            background-color: variables.$background-color;
+            box-shadow: variables.$shadow;
+            border-radius: 10px;
+            padding: 1rem;
+        }
+
+
+        h3 {
+            text-align: center;
+        }
+
+    }
 }

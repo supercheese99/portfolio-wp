@@ -1,7 +1,25 @@
 @use 'variables.scss';
 
 #section-11 {
-    height: 100dvh;
-    background-color: #B6E0FF;
+    height: 50dvh;
+    padding-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    .div-for-11 {
+        display: flex;
+        justify-content: space-evenly;
+        
+        svg {
+            width: 10dvw;
+            height: auto;
+        }
+    }
+
+    h2 {
+        text-align: center;
+    }
+
 
 }

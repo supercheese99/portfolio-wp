@@ -23,8 +23,8 @@ get_header(); ?>
                 // Include the section content from corresponding PHP file
                 get_template_part( 'section', $page_id ); 
                 ?>
-                <!-- Display the content of the page from the database -->
-                <div><?php echo apply_filters( 'the_content', $post->post_content ); ?></div>
+                <!-- Display the content of the projects and about me page -->
+                <!-- <div><?php echo apply_filters( 'the_content', $post->post_content ); ?></div> -->
             </div>
         </section>
 
