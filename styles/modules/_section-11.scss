@@ -1,5 +1,6 @@
 @use 'variables.scss';
 
+// contact me
 #section-11 {
     height: 50dvh;
     padding-top: 5rem;
@@ -14,6 +15,12 @@
         svg {
             width: 10dvw;
             height: auto;
+
+            path {
+                fill: variables.$background-color;
+                stroke: variables.$font-color;
+                stroke-width: 0.2;
+            }
         }
     }
 

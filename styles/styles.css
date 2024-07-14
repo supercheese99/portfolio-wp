@@ -1,12 +1,25 @@
+/*
+Theme Name: My Portfolio
+Theme URI: http://underscores.me/
+Author: oliwia Wegner
+Author URI: https://oliwiawdesign.com
+Description: A custom theme for WordPress.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: my-portfolio
+
+My Portfolio is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+*/
+
 body {
   font-family: "Dosis", sans-serif;
   margin: 0;
   color: #291F1F;
   background-image: url("../media/7863.jpg");
   background-size: cover;
-}
-body section {
-  padding: 0rem 1rem;
+  backdrop-filter: contrast(30%);
 }
 body h1 {
   margin: 0;
@@ -26,20 +39,21 @@ body h3 {
 body a {
   color: #291F1F;
 }
+body section {
+  padding: 0 1rem;
+}
 
 header {
   position: sticky;
   top: 0;
   z-index: 99;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  align-items: center;
   width: 100dvw;
   height: 10dvh;
   background-color: #F9F4F4;
-  box-shadow: 0px 4px 5px 0px rgb(186, 186, 186);
-}
-header .site-branding {
-  padding-left: 1rem;
+  box-shadow: 0px 4px 5px 0px #291F1F;
 }
 header .site-branding a {
   font-size: 1.25rem;
@@ -47,23 +61,21 @@ header .site-branding a {
   font-family: "Danfo", serif;
 }
 header .main-navigation {
-  width: 20dvw;
-}
-@media (min-width: 800px) {
-  header .main-navigation {
-    display: flex;
-    align-items: center;
-  }
+  display: flex;
+  align-items: center;
 }
 header .main-navigation .menu-toggle {
   display: block;
-  width: 4rem;
+  width: 3rem;
   height: auto;
+  padding-top: 1rem;
   border: none;
   background-color: transparent;
   cursor: pointer;
 }
 header .main-navigation .menu-toggle svg {
+  width: 100%;
+  height: auto;
   fill: #291F1F;
 }
 @media (min-width: 800px) {
@@ -73,32 +85,50 @@ header .main-navigation .menu-toggle svg {
 }
 header .main-navigation .menu-navigation-container {
   display: none;
-  position: relative;
-  top: -13%;
-  left: -110%;
-  width: 30dvw;
-  height: 90dvh;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
   background-color: #F9F4F4;
   padding: 1rem 2rem;
-  box-shadow: 0px 4px 5px 0px rgb(186, 186, 186);
+  box-shadow: 0px 4px 5px 0px #291F1F;
+  flex-direction: column;
+}
+@media (min-width: 800px) {
+  header .main-navigation .menu-navigation-container {
+    display: flex;
+    position: relative;
+    top: auto;
+    left: auto;
+    width: auto;
+    background-color: transparent;
+    box-shadow: none;
+    flex-direction: row;
+    padding: 0;
+  }
 }
 header .main-navigation .menu-navigation-container.toggled {
-  display: block;
+  display: flex;
 }
 header .main-navigation .menu-navigation-container ul {
-  padding: 0rem;
+  padding: 0;
   list-style: none;
-  height: 90dvh;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  align-items: flex-start;
+}
+@media (min-width: 800px) {
+  header .main-navigation .menu-navigation-container ul {
+    flex-direction: row;
+    align-items: center;
+  }
 }
 header .main-navigation .menu-navigation-container ul li {
   margin-bottom: 1rem;
 }
 @media (min-width: 800px) {
   header .main-navigation .menu-navigation-container ul li {
-    display: inline-block;
+    margin-bottom: 0;
     margin-right: 1rem;
   }
 }
@@ -106,26 +136,10 @@ header .main-navigation .menu-navigation-container ul a {
   text-decoration: none;
   color: #291F1F;
   text-transform: uppercase;
-  font-size: 2rem;
+  font-size: 1.25rem;
 }
-header .main-navigation .menu-navigation-container ul a:hover {
+header .main-navigation .menu-navigation-container ul a:hover, header .main-navigation .menu-navigation-container ul a:active {
   text-decoration: line-through;
-}
-header .main-navigation .menu-navigation-container ul a:active {
-  text-decoration: line-through;
-}
-@media (min-width: 768px) {
-  header .main-navigation .menu-toggle {
-    display: none;
-  }
-  header .main-navigation .menu-navigation-container {
-    display: block;
-    position: relative;
-    top: auto;
-    width: auto;
-    left: auto;
-    box-shadow: none;
-  }
 }
 
 footer {
@@ -139,25 +153,25 @@ footer .footer-copyright p {
 }
 
 #section-6 {
-  height: 200dvh;
-  margin: 0rem 1rem;
+  height: auto;
 }
 #section-6 h2 {
   text-align: center;
   background-color: #F9F4F4;
-  box-shadow: 10px 10px 5px -5px #291F1F;
-  border-radius: 10px;
+  box-shadow: 0px 4px 5px 0px #291F1F;
+  border-radius: 10px 10px 0px 0px;
 }
 #section-6 .div-for-6 {
-  height: 200dvh;
+  height: auto;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: flex-end;
+  background-color: #F9F4F4;
+  border-radius: 0px 0px 10px 10px;
 }
 #section-6 .div-for-6 .about-me {
-  background-color: #F9F4F4;
-  box-shadow: 0px 4px 5px 0px rgb(186, 186, 186);
-  border-radius: 10px;
+  box-shadow: 0px 4px 5px 0px #291F1F;
+  border-radius: 0px 0px 10px 10px;
   padding: 1rem;
 }
 #section-6 .div-for-6 h3 {
@@ -183,6 +197,11 @@ footer .footer-copyright p {
   width: 10dvw;
   height: auto;
 }
+#section-11 .div-for-11 svg path {
+  fill: #F9F4F4;
+  stroke: #291F1F;
+  stroke-width: 0.2;
+}
 #section-11 h2 {
   text-align: center;
 }
@@ -200,13 +219,12 @@ footer .footer-copyright p {
   background-color: #F9F4F4;
   border-radius: 1rem;
   box-shadow: 10px 10px 5px -5px #291F1F;
-  padding: 1rem;
   opacity: 0.95;
 }
 #section-26 .div-for-26 .image-container {
   width: 50dvw;
   position: absolute;
-  top: 20%;
+  top: 5%;
   left: 25%;
 }
 #section-26 .div-for-26 .image-container img {

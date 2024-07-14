@@ -12,5 +12,9 @@ $background-color: #F9F4F4;
 $background-image: url("../media/7863.jpg");
 
 // shadows
-$shadow: 0px 4px 5px 0px rgba(186,186,186,1);
+$shadow: 0px 4px 5px 0px $font-color;
 $shadow-dark: 10px 10px 5px -5px $font-color;
+
+//border radius for about me section
+$border-radius: 10px 10px 0px 0px;
+$border-radius-invert: 0px 0px 10px 10px;

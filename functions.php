@@ -42,6 +42,7 @@ function my_portfolio_setup() {
         )
     );
 
+    // Add theme support for selective refresh for widgets
     add_theme_support( 'customize-selective-refresh-widgets' );
 
     add_theme_support(
@@ -56,6 +57,7 @@ function my_portfolio_setup() {
 
     add_theme_support( 'align-wide' );
     add_theme_support( 'align-full' );
+    //add_theme_support( 'post-thumbnails' );
 }
 add_action( 'after_setup_theme', 'my_portfolio_setup' );
 
@@ -145,12 +147,12 @@ function my_portfolio_block_templates(){
         //     ) 
         // ),
 
-        array( 
-            'core/shortcode', 
-            array( 
-                'placeholder' => 'Add Images Here'
-            ) 
-        ),
+        // array( 
+        //     'core/shortcode', 
+        //     array( 
+        //         'placeholder' => 'Add Images Here'
+        //     ) 
+        // ),
 
         array( 
             'core/button', 
@@ -173,12 +175,16 @@ function my_portfolio_block_templates(){
             ) 
         ),
     );
-    $project_post_type_object->template_lock = 'all';
+    // $project_post_type_object->template_lock = 'all';
 
 
 }
 add_action( 'init', 'my_portfolio_block_templates' );
 
+function my_portfolio_add_featured_image_support() {
+    add_post_type_support( 'my-portfolio-project', 'thumbnail' );
+}
+add_action( 'init', 'my_portfolio_add_featured_image_support' );
 
 // Customize excerpt length
 function my_portfolio_excerpt_length( $length ) {

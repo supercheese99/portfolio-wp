@@ -1,29 +1,29 @@
 @use 'variables.scss';
 
+//  about me
 #section-6 {
-    height: 200dvh;
-    margin: 0rem 1rem;
+    height: auto;
     
     h2 {
         text-align: center;
         background-color: variables.$background-color;
-        box-shadow: variables.$shadow-dark;
-        border-radius: 10px;
+        box-shadow: variables.$shadow;
+        border-radius: variables.$border-radius;
     }
 
     .div-for-6 {
-        height: 200dvh;
+        height: auto;
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
+        justify-content: flex-end;
+        background-color: variables.$background-color;
+        border-radius: variables.$border-radius-invert;
 
         .about-me {
-            background-color: variables.$background-color;
             box-shadow: variables.$shadow;
-            border-radius: 10px;
+            border-radius: variables.$border-radius-invert;
             padding: 1rem;
         }
-
 
         h3 {
             text-align: center;

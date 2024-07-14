@@ -8,10 +8,7 @@ body {
     // <a href="https://www.freepik.com/free-vector/gradient-wavy-pattern-design_31740720.htm#query=wavy%20pattern&position=41&from_view=keyword&track=ais_hybrid&uuid=f72532e1-1b37-448b-8a4f-94c792397fad">Image by freepik</a>
     background-image: variables.$background-image;
     background-size: cover;
-
-    section {
-        padding: 0rem 1rem;
-    }
+    backdrop-filter: contrast(30%);
 
     h1 {
         margin: 0;
@@ -34,4 +31,12 @@ body {
     a {
         color: variables.$font-color;
     }
+
+    section {
+        padding: 0 1rem;
+    }
+
+    // div {
+    //     width: 90dvw;
+    // }
 }

@@ -46,6 +46,7 @@ function my_portfolio_register_custom_post_types() {
         'supports'           => array( 'title', 'thumbnail', 'editor' ),
     );
     register_post_type( 'my-portfolio-project', $args );
+
 }
 
 add_action( 'init', 'my_portfolio_register_custom_post_types' );

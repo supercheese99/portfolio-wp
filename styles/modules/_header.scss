@@ -5,78 +5,89 @@ header {
     top: 0;
     z-index: 99;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    align-items: center;
     width: 100dvw;
     height: 10dvh;
     background-color: variables.$background-color;
     box-shadow: variables.$shadow;
 
     .site-branding {
-        padding-left: 1rem;
-
         a {
             font-size: 1.25rem;
             text-decoration: none;
             font-family: variables.$heading-font;
         }
-
     }
 
     .main-navigation {
-        width: 20dvw;
-
-        @media (min-width: 800px) {
-            display: flex;
-            align-items: center;
-        }
+        display: flex;
+        align-items: center;
 
         .menu-toggle {
             display: block;
-            width: 4rem;
+            width: 3rem;
             height: auto;
+            padding-top: 1rem;
             border: none;
             background-color: transparent;
             cursor: pointer;
 
             svg {
+                width: 100%;
+                height: auto;
                 fill: variables.$font-color;
             }
 
             @media (min-width: 800px) {
                 display: none;
             }
-
         }
 
         .menu-navigation-container {
             display: none;
-            position: relative;
-            top: -13%;
-            left: -110%;
-            width: 30dvw;
-            height: 90dvh;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
             background-color: variables.$background-color;
             padding: 1rem 2rem;
             box-shadow: variables.$shadow;
+            flex-direction: column;
+
+            @media (min-width: 800px) {
+                display: flex;
+                position: relative;
+                top: auto;
+                left: auto;
+                width: auto;
+                background-color: transparent;
+                box-shadow: none;
+                flex-direction: row;
+                padding: 0;
+            }
 
             &.toggled {
-                display: block; // Show the menu when toggled
-              }
-
+                display: flex; // Show the menu when toggled
+            }
 
             ul {
-                padding: 0rem;
+                padding: 0;
                 list-style: none;
-                height: 90dvh;
                 display: flex;
                 flex-direction: column;
-                justify-content: space-evenly;
+                align-items: flex-start;
+
+                @media (min-width: 800px) {
+                    flex-direction: row;
+                    align-items: center;
+                }
 
                 li {
                     margin-bottom: 1rem;
 
                     @media (min-width: 800px) {
-                        display: inline-block;
+                        margin-bottom: 0;
                         margin-right: 1rem;
                     }
                 }
@@ -85,33 +96,14 @@ header {
                     text-decoration: none;
                     color: variables.$font-color;
                     text-transform: uppercase;
-                    font-size: 2rem;
+                    font-size: 1.25rem;
 
-                    &:hover {
-                        text-decoration: line-through;
-                    }
-
+                    &:hover,
                     &:active {
                         text-decoration: line-through;
                     }
-
                 }
             }
         }
-
-        @media (min-width: 768px) {
-            .menu-toggle {
-              display: none; // Hide the toggle button on larger screens
-            }
-          
-            .menu-navigation-container {
-              display: block; // Always show the menu on larger screens
-              position: relative;
-              top: auto;
-              width: auto;
-              left: auto;
-              box-shadow: none;
-            }
-          }
     }
 }
