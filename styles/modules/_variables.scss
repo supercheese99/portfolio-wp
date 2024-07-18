@@ -10,10 +10,12 @@ $thicker-heading: 600;
 $font-color: #291F1F;
 $background-color: #F9F4F4;
 $background-image: url("../media/7863.jpg");
+$accent-color: pink;
 
 // shadows
 $shadow: 0px 4px 5px 0px $font-color;
 $shadow-dark: 10px 10px 5px -5px $font-color;
+$text-shadow: 0px 1px 5px $accent-color;
 
 //border radius for about me section
 $border-radius: 10px 10px 0px 0px;

@@ -21,8 +21,14 @@
                   <img src="<?php the_post_thumbnail_url('blog-post'); ?>" alt="<?php the_title(); ?>">
                <?php endif; ?>
                <h3><?php the_title(); ?></h3>
-               <p><?php the_excerpt(); ?></p>
-               <a href="<?php the_permalink(); ?>">Read More</a>
+               <?php
+               $excerpt = trim(get_the_excerpt());
+
+               if (!empty($excerpt)) : ?>
+               <p><?php echo $excerpt; ?></p>
+               <?php endif; ?>
+               
+               <a href="<?php the_permalink(); ?>" class="read-more">Read More</a>
          </div>
 
       <?php endwhile;

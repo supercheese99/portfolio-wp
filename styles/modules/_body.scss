@@ -14,14 +14,14 @@ body {
         margin: 0;
         font-size: 3rem;
         font-family: variables.$heading-font;
-        text-shadow: 0px 1px 5px pink;
+        text-shadow: variables.$text-shadow;
     }
 
     h2 {
         font-family: variables.$heading-font;
         margin: 0;
         font-size: 2rem;
-        text-shadow: 0px 1px 5px pink;
+        text-shadow: variables.$text-shadow;
     }
 
     h3 {

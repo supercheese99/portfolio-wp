@@ -9,7 +9,7 @@ function my_portfolio_setup() {
     add_theme_support( 'automatic-feed-links' );
     add_theme_support( 'title-tag' );
     add_theme_support( 'post-thumbnails' );
-    add_image_size( 'blog-post', 400, 200, true );
+    add_image_size( 'blog-post', 300, 200, true );
 
     register_nav_menus(
         array(

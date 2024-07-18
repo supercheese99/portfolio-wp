@@ -49,9 +49,9 @@ header {
             position: absolute;
             top: 100%;
             left: 0;
-            width: 100%;
+            width: 95%;
             background-color: variables.$background-color;
-            padding: 1rem 2rem;
+            padding: 1rem 0rem 1rem 2rem;
             box-shadow: variables.$shadow;
             flex-direction: column;
 
@@ -73,6 +73,7 @@ header {
 
             ul {
                 padding: 0;
+                width: 100dvw;
                 list-style: none;
                 display: flex;
                 flex-direction: column;
@@ -81,6 +82,7 @@ header {
                 @media (min-width: 800px) {
                     flex-direction: row;
                     align-items: center;
+                    width: auto;
                 }
 
                 li {
