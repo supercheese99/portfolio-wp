@@ -248,7 +248,7 @@ footer .footer-copyright p {
 }
 
 #section-26 {
-  height: 90dvh;
+  height: 100dvh;
   padding-top: 4rem;
   display: flex;
   flex-direction: column;
@@ -262,16 +262,37 @@ footer .footer-copyright p {
   box-shadow: 10px 10px 5px -5px #291F1F;
   opacity: 0.95;
 }
+@media (min-width: 31.25rem) {
+  #section-26 .div-for-26 .text-container {
+    bottom: -50%;
+  }
+}
+@media (min-width: 50rem) {
+  #section-26 .div-for-26 .text-container {
+    width: 50%;
+    left: 25%;
+  }
+}
 #section-26 .div-for-26 .image-container {
   width: 50dvw;
   position: absolute;
   top: 5%;
   left: 25%;
 }
+@media (min-width: 50rem) {
+  #section-26 .div-for-26 .image-container {
+    left: 30%;
+  }
+}
 #section-26 .div-for-26 .image-container img {
   width: 50dvw;
   border-radius: 50%;
   box-shadow: 10px 10px 5px -5px #291F1F;
+}
+@media (min-width: 50rem) {
+  #section-26 .div-for-26 .image-container img {
+    width: 40dvw;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

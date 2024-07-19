@@ -2,7 +2,7 @@
 
 // landing page
 #section-26 {
-    height: 90dvh;
+    height: 100dvh;
     padding-top: 4rem;
     display: flex;
     flex-direction: column;
@@ -17,6 +17,15 @@
             border-radius: 1rem;
             box-shadow: variables.$shadow-dark;
             opacity: .95;
+
+            @media (min-width: variables.$tablet-size) {
+                bottom: -50%;
+            }
+
+            @media (min-width: variables.$laptop-size) {
+                width: 50%;
+                left: 25%;
+            }
         }
 
         .image-container {
@@ -25,10 +34,18 @@
             top: 5%;
             left: 25%;
 
+            @media (min-width: variables.$laptop-size) {
+                left: 30%;
+            }
+
             img {
                 width: 50dvw;
                 border-radius: 50%;
                 box-shadow: variables.$shadow-dark;
+
+                @media (min-width: variables.$laptop-size) {
+                    width: 40dvw;
+                }
             }
         }
     }
