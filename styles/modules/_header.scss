@@ -49,7 +49,7 @@ header {
             position: absolute;
             top: 100%;
             left: 0;
-            width: 95%;
+            width: 90%;
             background-color: variables.$background-color;
             padding: 1rem 0rem 1rem 2rem;
             box-shadow: variables.$shadow;
@@ -73,7 +73,6 @@ header {
 
             ul {
                 padding: 0;
-                width: 100dvw;
                 list-style: none;
                 display: flex;
                 flex-direction: column;

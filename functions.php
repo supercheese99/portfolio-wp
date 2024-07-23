@@ -140,32 +140,9 @@ function my_portfolio_block_templates(){
     
     $project_post_type_object = get_post_type_object( 'my-portfolio-project' );
     $project_post_type_object->template = array(
-        // array( 
-        //     'core/gallery', 
-        //     array( 
-        //         'placeholder' => 'Add Images Here'
-        //     ) 
-        // ),
 
-        // array( 
-        //     'core/shortcode', 
-        //     array( 
-        //         'placeholder' => 'Add Images Here'
-        //     ) 
-        // ),
-
-        array( 
-            'core/button', 
-            array( 
-                'placeholder' => 'Add Link Here'
-            ) 
-        ),
-
-        array( 
-            'core/button', 
-            array( 
-                'placeholder' => 'Add Link Here'
-            ) 
+        array(
+            'core/buttons',
         ),
 
         array( 

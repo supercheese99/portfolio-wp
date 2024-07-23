@@ -29,7 +29,11 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php //my_portfolio_post_thumbnail(); ?>
+	<?php 
+	if ( has_post_thumbnail() ) {
+		the_post_thumbnail();
+	}
+	?>
 
 	<div class="entry-content">
 		<?php
@@ -48,6 +52,24 @@
 			)
 		);
 
+
+		// display advanced custom fields
+		?>
+		<div class="tabs-container">
+	
+			<h3><?php the_field( 'toolstack' ); ?></h3>
+			<h3><?php the_field( 'my_role' ); ?></h3>
+			<h3><?php the_field( 'the_process' ); ?></h3>
+			<h3><?php the_field( 'lessons_learned' ); ?></h3>
+
+			<p><?php the_field( 'tab_text' ); ?></p>
+			<p><?php the_field( 'tab_text_2' ); ?></p>
+			<p><?php the_field( 'tab_text_3' ); ?></p>
+			<p><?php the_field( 'tab_text_4' ); ?></p>
+
+		</div>
+
+		<?php
 		wp_link_pages(
 			array(
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'my-portfolio' ),

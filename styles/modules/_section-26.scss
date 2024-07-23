@@ -3,10 +3,9 @@
 // landing page
 #section-26 {
     height: 100dvh;
-    padding-top: 4rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
 
     .div-for-26 {
 
@@ -17,26 +16,21 @@
             border-radius: 1rem;
             box-shadow: variables.$shadow-dark;
             opacity: .95;
+            width: 90dvw;
+            left: 5%;
 
-            @media (min-width: variables.$tablet-size) {
-                bottom: -50%;
-            }
-
-            @media (min-width: variables.$laptop-size) {
-                width: 50%;
-                left: 25%;
+            @media (min-width: variables.$desktop-size) {
+                width: 60dvw;
+                left: 20%;
             }
         }
 
         .image-container {
-            width: 50dvw;
-            position: absolute;
-            top: 5%;
-            left: 25%;
-
-            @media (min-width: variables.$laptop-size) {
-                left: 30%;
-            }
+            position: relative;
+            top: 0;
+            left: 0;
+            width: auto;
+            text-align: center;
 
             img {
                 width: 50dvw;
@@ -44,7 +38,11 @@
                 box-shadow: variables.$shadow-dark;
 
                 @media (min-width: variables.$laptop-size) {
-                    width: 40dvw;
+                    width: 30dvw;
+                }
+
+                @media (min-width: variables.$large-screen) {
+                    width: 20dvw;
                 }
             }
         }

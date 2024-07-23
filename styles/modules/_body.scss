@@ -1,7 +1,7 @@
 @use 'variables.scss';
 body {
     font-family: variables.$body-font;
-    margin: 0;
+    margin: 0 auto;
     color: variables.$font-color;
     // <a href="https://www.freepik.com/free-vector/abstract-warped-striped-background_2225803.htm#page=3&query=wavy%20pattern&position=5&from_view=keyword&track=ais_user&uuid=f72532e1-1b37-448b-8a4f-94c792397fad">Image by kjpargeter on Freepik</a>
 
@@ -31,12 +31,4 @@ body {
     a {
         color: variables.$font-color;
     }
-
-    section {
-        padding: 0 1rem;
-    }
-
-    // div {
-    //     width: 90dvw;
-    // }
 }
