@@ -16,7 +16,7 @@
       // Loop through the posts
       while ($projects_query->have_posts()) : $projects_query->the_post(); ?>
 
-         <div id="post-<?php the_ID(); ?>" class="project-item">
+         <div id="post-<?php the_ID(); ?>" class="project-item hidden">
                <?php if (has_post_thumbnail()) : ?>
                   <img src="<?php the_post_thumbnail_url('blog-post'); ?>" alt="<?php the_title(); ?>">
                <?php endif; ?>

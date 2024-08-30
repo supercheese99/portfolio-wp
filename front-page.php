@@ -6,6 +6,10 @@ Template Name: One Page Template
 get_header(); ?>
 
 <div id="content" class="site-content">
+    
+<div class="player-container">
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/6BzxX6zkDsYKFJ04ziU5xQ?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+</div>
     <?php
     // Defining the pages to include as sections
     $pages = array( 26, 6, 9, 11 );
@@ -14,7 +18,7 @@ get_header(); ?>
         $post = get_post( $page_id );
         setup_postdata( $post ); ?>
 
-        <section id="section-<?php echo $page_id; ?>" class="one-page-section">
+        <section id="section-<?php echo $page_id; ?>" class="one-page-section hidden">
             <?php if ( $page_id !== 26 ) : // Exclude the title for the landing page ?>
                 <h2><?php echo get_the_title( $page_id ); ?></h2>
             <?php endif; ?>

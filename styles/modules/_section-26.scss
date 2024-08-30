@@ -1,27 +1,45 @@
 @use 'variables.scss';
 
 // landing page
+@keyframes load {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 #section-26 {
-    height: 100dvh;
+    height: 90dvh;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+
+    @media (min-width: variables.$laptop-size) {
+        justify-content: start;
+    }
 
     .div-for-26 {
 
         .text-container{
             position: relative;
+            top: 0;
+            left: 0;
+            width: auto;
             text-align: center;
             background-color: variables.$background-color;
-            border-radius: 1rem;
             box-shadow: variables.$shadow-dark;
-            opacity: .95;
-            width: 90dvw;
-            left: 5%;
+            animation: load 1.5s ease-in;
 
-            @media (min-width: variables.$desktop-size) {
-                width: 60dvw;
-                left: 20%;
+            p {
+                margin: 0;
+                padding: 1rem;
+            }
+
+            h1 {
+                padding-top: 1rem;
             }
         }
 
@@ -31,9 +49,11 @@
             left: 0;
             width: auto;
             text-align: center;
+            margin-bottom: 4rem;
+            animation: load 1s ease-in;
 
             img {
-                width: 50dvw;
+                width: 30dvw;
                 border-radius: 50%;
                 box-shadow: variables.$shadow-dark;
 
@@ -42,7 +62,7 @@
                 }
 
                 @media (min-width: variables.$large-screen) {
-                    width: 20dvw;
+                    width: 15dvw;
                 }
             }
         }

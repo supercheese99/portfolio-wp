@@ -1,4 +1,5 @@
 @use 'variables.scss';
+
 body {
     font-family: variables.$body-font;
     margin: 0 auto;
@@ -30,5 +31,65 @@ body {
 
     a {
         color: variables.$font-color;
+    }
+
+    .player-container {
+        position: sticky;
+        top: 10dvh;
+        width: 100%;
+        z-index: 90;
+        animation: load 1s ease-in;
+
+        @keyframes load {
+            0% {
+                opacity: 0;
+            }
+        
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @media (min-width: variables.$laptop-size) {
+            top: 80dvh;
+            width: 30%;
+        }
+        @media (min-width: variables.$desktop-size) {
+            top: 75dvh;
+        }
+
+        iframe {
+            width: 100%;
+            box-shadow: variables.$shadow;
+    
+            // @media (min-width: variables.$laptop-size) {
+            //     width: 30%;
+            // }
+        }
+    }
+
+    .hidden {
+        opacity: 0;
+        transform: translateX(-100%);
+        transition: all 1s;
+    }
+
+    @media (prefers-reduced-motion) {
+        .hidden {
+            transition: none;
+        }
+    }
+    
+    .show {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .project-item:nth-child(2) {
+        transition-delay: 200ms;
+    }
+
+    .project-item:nth-child(3) {
+        transition-delay: 400ms;
     }
 }

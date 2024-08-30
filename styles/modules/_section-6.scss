@@ -11,6 +11,7 @@
     
     h2 {
         width: 90%;
+        max-width: variables.$desktop-size;
         text-align: center;
         background-color: variables.$background-color;
         box-shadow: variables.$shadow;
@@ -19,6 +20,7 @@
 
     .div-for-6 {
         width: 90%;
+        max-width: variables.$desktop-size;
         height: auto;
         display: flex;
         flex-direction: column;
@@ -27,7 +29,13 @@
 
         .about-me-container {
             display: flex;
-            column-gap: 1rem;
+            flex-direction: column;
+            row-gap: 1rem;
+
+            @media (min-width: variables.$laptop-size) {
+                flex-direction: row;
+                column-gap: 1rem;
+            }
             
             .about-me {
                 background-color: variables.$background-color;
@@ -43,18 +51,19 @@
             box-shadow: variables.$shadow;
             border-radius: variables.$border-radius-invert;
             padding: 1rem;
-        }
 
-        .interests {
+            .toolkit-icons-container {
+                display: flex;
+                flex-wrap: wrap;
+                width: 50%;
+                justify-content: space-between;
 
-            h2 {
-                width: 100%;
-            }
-
-            iframe {
-                box-shadow: variables.$shadow-dark;
+                img {
+                    width: 45px;
+                }
             }
         }
 
     }
+
 }
