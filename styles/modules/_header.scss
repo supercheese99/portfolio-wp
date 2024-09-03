@@ -112,4 +112,14 @@ header {
             }
         }
     }
+
+    .spotify-player {
+        position: absolute;
+        bottom: -900%;
+
+        @media (min-width: variables.$desktop-size) {
+            left: 0;
+            bottom: -600%;
+        }
+    }
 }

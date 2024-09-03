@@ -46,7 +46,10 @@
         }
 
         #technologies {
+            display: flex;
+            flex-direction: column;
             text-align: center;
+            align-items: center;
             background-color: variables.$background-color;
             box-shadow: variables.$shadow;
             border-radius: variables.$border-radius-invert;
@@ -57,9 +60,19 @@
                 flex-wrap: wrap;
                 width: 50%;
                 justify-content: space-between;
+                margin-top: 1rem;
 
                 img {
                     width: 45px;
+                    margin: 1rem 0rem;
+
+                    @media (min-width: variables.$px-450) {
+                        margin: 1rem;
+                    }
+
+                    &:hover {
+                        transform: scale(150%);
+                    }
                 }
             }
         }

@@ -12,10 +12,11 @@
 }
 
 #section-26 {
-    height: 90dvh;
+    height: 100dvh;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    align-items: center;
+    margin: 2rem 0rem;
 
     @media (min-width: variables.$laptop-size) {
         justify-content: start;
@@ -27,7 +28,7 @@
             position: relative;
             top: 0;
             left: 0;
-            width: auto;
+            width: 100dvw;
             text-align: center;
             background-color: variables.$background-color;
             box-shadow: variables.$shadow-dark;
@@ -53,16 +54,20 @@
             animation: load 1s ease-in;
 
             img {
-                width: 30dvw;
+                width: 60dvw;
                 border-radius: 50%;
                 box-shadow: variables.$shadow-dark;
+
+                @media (min-width: variables.$tablet-size) {
+                    width: 40dvw;
+                }
 
                 @media (min-width: variables.$laptop-size) {
                     width: 30dvw;
                 }
 
-                @media (min-width: variables.$large-screen) {
-                    width: 15dvw;
+                @media (min-width: variables.$desktop-size) {
+                    width: 20dvw;
                 }
             }
         }
