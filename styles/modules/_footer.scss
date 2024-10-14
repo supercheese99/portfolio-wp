@@ -3,7 +3,7 @@
 footer {
     position: relative;
     bottom: 0;
-    // width: 90dvw;
+    background-image: linear-gradient(transparent, variables.$accent-color, variables.$font-color);
 
     .footer-copyright {
         padding: 0rem 1rem;
@@ -12,6 +12,7 @@ footer {
             margin: 0;
             padding-bottom: 1rem;
             text-align: center;
+            color: variables.$background-color;
         }
     }
 

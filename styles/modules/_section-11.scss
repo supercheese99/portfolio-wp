@@ -3,24 +3,39 @@
 // contact me
 #section-11 {
     width: auto;
-    height: 80dvh;
+    height: 100dvh;
     padding-top: 5rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: flex-end;
+
+    @media (min-width: variables.$laptop-size) {
+        justify-content: space-evenly;
+    }
 
     .div-for-11 {
         display: flex;
         justify-content: space-evenly;
         
         svg {
-            width: 10dvw;
+            width: 50px;
             height: auto;
+            overflow: visible;
+
+            @media (min-width: variables.$tablet-size) {
+                width: 100px;
+            }
 
             path {
                 fill: variables.$background-color;
-                stroke: variables.$font-color;
-                stroke-width: 0.2;
+                stroke: variables.$accent-color;
+                stroke-width: 0.5;
+                stroke-linecap: round;
+                width: 200px;
+
+                &:hover, &:active {
+                    fill: variables.$font-color;
+                }
             }
         }
     }

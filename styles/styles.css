@@ -14,19 +14,21 @@ body {
 body .site-content {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: stretch;
 }
 body h1 {
   margin: 0;
-  font-size: 3rem;
+  font-size: 5rem;
   font-family: "Danfo", serif;
   text-shadow: 0px 1px 5px pink;
 }
 body h2 {
   font-family: "Danfo", serif;
   margin: 0;
-  font-size: 2rem;
+  font-size: 4rem;
   text-shadow: 0px 1px 5px pink;
+  color: #F9F4F4;
 }
 body h3 {
   margin: 0;
@@ -34,9 +36,9 @@ body h3 {
 body a {
   color: #291F1F;
 }
-body .player-container {
+body .spotify-player {
   position: sticky;
-  top: 10dvh;
+  bottom: 10dvh;
   width: 100%;
   z-index: 90;
   animation: load 1s ease-in;
@@ -50,17 +52,18 @@ body .player-container {
   }
 }
 @media (min-width: 50rem) {
-  body .player-container {
-    top: 80dvh;
-    width: 30%;
+  body .spotify-player {
+    top: 10dvh;
+    left: 0;
+    width: auto;
   }
 }
 @media (min-width: 62.5rem) {
-  body .player-container {
-    top: 75dvh;
+  body .spotify-player {
+    top: 10dvh;
   }
 }
-body .player-container iframe {
+body .spotify-player iframe {
   width: 100%;
   box-shadow: 0px 4px 5px 0px #291F1F;
 }
@@ -204,6 +207,7 @@ header .spotify-player {
 footer {
   position: relative;
   bottom: 0;
+  background-image: linear-gradient(transparent, pink, #291F1F);
 }
 footer .footer-copyright {
   padding: 0rem 1rem;
@@ -212,23 +216,21 @@ footer .footer-copyright p {
   margin: 0;
   padding-bottom: 1rem;
   text-align: center;
+  color: #F9F4F4;
 }
 
 #section-6 {
-  height: auto;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   row-gap: 1rem;
 }
 #section-6 h2 {
   width: 90%;
   max-width: 62.5rem;
   text-align: center;
-  background-color: #F9F4F4;
-  box-shadow: 0px 4px 5px 0px #291F1F;
-  border-radius: 10px 10px 0px 0px;
 }
 #section-6 .div-for-6 {
   width: 90%;
@@ -255,6 +257,11 @@ footer .footer-copyright p {
   box-shadow: 0px 4px 5px 0px #291F1F;
   border-radius: 0px 0px 10px 10px;
   padding: 1rem;
+}
+#section-6 .div-for-6 .about-me-container #person h2 {
+  color: #291F1F;
+  font-size: 2rem;
+  text-align: left;
 }
 #section-6 .div-for-6 #technologies {
   display: flex;
@@ -287,13 +294,18 @@ footer .footer-copyright p {
 }
 
 #section-9 {
-  height: auto;
-  position: relative;
+  height: 150dvh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }
 #section-9 .div-for-9 {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  align-items: center;
 }
 @media (min-width: 600px) {
   #section-9 .div-for-9 {
@@ -305,6 +317,9 @@ footer .footer-copyright p {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 300px;
+  height: 350px;
+  text-align: left;
   background-color: #F9F4F4;
   border-radius: 15px;
   box-shadow: 10px 10px 5px -5px #291F1F;
@@ -321,7 +336,10 @@ footer .footer-copyright p {
   height: auto;
   border-radius: 10px;
   align-self: center;
-  margin-bottom: 1rem;
+}
+#section-9 .div-for-9 .project-item .coming-soon {
+  text-align: center;
+  color: #291F1F;
 }
 #section-9 .div-for-9 .project-item .read-more {
   text-decoration: none;
@@ -331,6 +349,7 @@ footer .footer-copyright p {
   width: 30%;
   text-align: center;
   padding: 0.5rem;
+  width: auto;
 }
 #section-9 .div-for-9 .project-item .read-more:hover {
   background-color: #291F1F;
@@ -343,24 +362,40 @@ footer .footer-copyright p {
 
 #section-11 {
   width: auto;
-  height: 80dvh;
+  height: 100dvh;
   padding-top: 5rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: flex-end;
+}
+@media (min-width: 50rem) {
+  #section-11 {
+    justify-content: space-evenly;
+  }
 }
 #section-11 .div-for-11 {
   display: flex;
   justify-content: space-evenly;
 }
 #section-11 .div-for-11 svg {
-  width: 10dvw;
+  width: 50px;
   height: auto;
+  overflow: visible;
+}
+@media (min-width: 31.25rem) {
+  #section-11 .div-for-11 svg {
+    width: 100px;
+  }
 }
 #section-11 .div-for-11 svg path {
   fill: #F9F4F4;
-  stroke: #291F1F;
-  stroke-width: 0.2;
+  stroke: pink;
+  stroke-width: 0.5;
+  stroke-linecap: round;
+  width: 200px;
+}
+#section-11 .div-for-11 svg path:hover, #section-11 .div-for-11 svg path:active {
+  fill: #291F1F;
 }
 #section-11 h2 {
   text-align: center;

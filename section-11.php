@@ -1,4 +1,4 @@
-<!-- section 3 - contact me -->
+<!-- section 11 - contact me -->
 
 <a href="https://github.com/supercheese99" target="_blank" rel="noopener noreferrer">
 <!-- github icon -->
