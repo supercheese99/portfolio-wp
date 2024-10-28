@@ -29,11 +29,13 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
+	<!-- <div class="thumbnail-container"> -->
 	<?php 
-	if ( has_post_thumbnail() ) {
-		the_post_thumbnail();
-	}
+	// if ( has_post_thumbnail() ) {
+	// 	the_post_thumbnail();
+	// }
 	?>
+	<!-- </div> -->
 
 	<div class="entry-content">
 		<?php

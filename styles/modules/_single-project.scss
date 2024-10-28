@@ -1,0 +1,26 @@
+@use 'variables.scss';
+
+#single-project-page {
+
+    .entry-header {
+        position: relative;
+        z-index: 1;
+
+        h1 {
+            font-size: 2.25rem;
+        }
+    }
+
+    .thumbnail-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 1rem 0rem;
+
+        img {
+            width: 300px;
+            height: auto;
+            box-shadow: variables.$shadow-dark;
+        }
+    }
+}

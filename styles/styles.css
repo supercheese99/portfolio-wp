@@ -331,6 +331,11 @@ footer .footer-copyright p {
     width: 45%;
   }
 }
+@media (min-width: 62.5rem) {
+  #section-9 .div-for-9 .project-item {
+    height: 300px;
+  }
+}
 #section-9 .div-for-9 .project-item img {
   width: 200px;
   height: auto;
@@ -362,7 +367,7 @@ footer .footer-copyright p {
 
 #section-11 {
   width: auto;
-  height: 100dvh;
+  height: 80dvh;
   padding-top: 5rem;
   display: flex;
   flex-direction: column;
@@ -466,6 +471,25 @@ footer .footer-copyright p {
   #section-26 .div-for-26 .image-container img {
     width: 20dvw;
   }
+}
+
+#single-project-page .entry-header {
+  position: relative;
+  z-index: 1;
+}
+#single-project-page .entry-header h1 {
+  font-size: 2.25rem;
+}
+#single-project-page .thumbnail-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0rem;
+}
+#single-project-page .thumbnail-container img {
+  width: 300px;
+  height: auto;
+  box-shadow: 10px 10px 5px -5px #291F1F;
 }
 
 /*# sourceMappingURL=styles.css.map */
