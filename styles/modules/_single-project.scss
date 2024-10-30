@@ -23,4 +23,145 @@
             box-shadow: variables.$shadow-dark;
         }
     }
+
+    .swiper-wrapper {
+        justify-content: center;
+        align-items: center;
+
+        img {
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    // styling the description and other text content
+    // link buttons
+
+    .wp-block-buttons {
+        justify-content: center;
+
+        .wp-block-button {
+
+            .wp-block-button__link {
+                color: variables.$font-color;
+                background-color: variables.$background-color;
+                border: 2px solid variables.$font-color;
+
+                &:hover {
+                    color: variables.$background-color;
+                    background-color: variables.$font-color;
+                    border: 2px solid variables.$accent-color;
+                }
+            }
+        }
+    }
+
+    // description
+    .project-descr {
+        text-align: center;
+        background-color: variables.$accent-color;
+        margin: 2rem 0rem;
+        max-width: 320px;
+        padding: 1rem;
+        border-radius: 10px;
+
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+
+        box-shadow: variables.$shadow;
+    }
+
+    // tabs
+    .tabs-container {
+        max-width: 500px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 1rem;
+        min-height: 80dvh;
+
+        @media (min-width: variables.$tablet-size) {
+            min-height: 60dvh;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0rem 0rem 0rem;
+
+            h3 {
+                background-color: variables.$background-color;
+                border: 2px solid variables.$font-color;
+                border-radius: 10px;
+                padding: 0.25rem;
+                cursor: pointer;
+
+                &:not(:first-of-type) {
+                    border-left: none;
+                }
+
+                &:hover {
+                    color: variables.$background-color;
+                    background-color: variables.$font-color;
+                    border: 2px solid variables.$accent-color;
+
+                    &:not(:first-of-type) {
+                        border-left: none;
+                    }
+                }
+            }
+        }
+
+        .tabs-info {
+            position: relative;
+
+            .info {
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: variables.$accent-color;
+                padding: 0.5rem;
+                border-radius: 10px;
+                box-shadow: variables.$shadow;
+            }
+        }
+    }
+}
+
+// more projects section
+.more-posts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+
+    h3 { // more projects title
+        color: variables.$background-color;
+        text-shadow: variables.$text-shadow;
+    }
+
+    .project-links {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        font-family: variables.$heading-font;
+        color: variables.$font-color;
+        text-decoration: none;
+        
+        @media (min-width: variables.$tablet-size) {
+            flex-direction: row;
+        }
+
+        a {
+            &:hover {
+                color: variables.$background-color;
+                text-shadow: variables.$text-shadow;
+            }
+        }
+    }
 }
