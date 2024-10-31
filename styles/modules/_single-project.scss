@@ -25,13 +25,34 @@
     }
 
     .swiper-wrapper {
-        justify-content: center;
-        align-items: center;
-
+        margin-top: 1rem;
+ 
         img {
             position: relative;
             left: 50%;
             transform: translateX(-50%);
+            border-radius: 15px;
+            box-shadow: variables.$shadow;
+
+            max-width: auto;
+            max-height: 500px;
+            // object-fit: contain;
+        }
+
+        .wp-block-video {
+            background-color: transparent;
+            max-width: 700px;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        video {
+            max-width: auto;
+            max-height: 500px;
+            object-fit: contain;
+            border-radius: 15px;
+            box-shadow: variables.$shadow;
         }
     }
 

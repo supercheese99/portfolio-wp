@@ -495,13 +495,30 @@ footer .footer-copyright p {
   box-shadow: 10px 10px 5px -5px #291F1F;
 }
 #single-project-page .swiper-wrapper {
-  justify-content: center;
-  align-items: center;
+  margin-top: 1rem;
 }
 #single-project-page .swiper-wrapper img {
   position: relative;
   left: 50%;
   transform: translateX(-50%);
+  border-radius: 15px;
+  box-shadow: 0px 4px 5px 0px #291F1F;
+  max-width: auto;
+  max-height: 500px;
+}
+#single-project-page .swiper-wrapper .wp-block-video {
+  background-color: transparent;
+  max-width: 700px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#single-project-page .swiper-wrapper video {
+  max-width: auto;
+  max-height: 500px;
+  object-fit: contain;
+  border-radius: 15px;
+  box-shadow: 0px 4px 5px 0px #291F1F;
 }
 #single-project-page .wp-block-buttons {
   justify-content: center;
