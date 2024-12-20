@@ -6,21 +6,20 @@
 
 body {
     font-family: variables.$body-font;
-    margin: 0 auto;
+    font-weight: variables.$thin-weight;
     color: variables.$font-color;
-    // <a href="https://www.freepik.com/free-vector/abstract-warped-striped-background_2225803.htm#page=3&query=wavy%20pattern&position=5&from_view=keyword&track=ais_user&uuid=f72532e1-1b37-448b-8a4f-94c792397fad">Image by kjpargeter on Freepik</a>
-
-    // <a href="https://www.freepik.com/free-vector/gradient-wavy-pattern-design_31740720.htm#query=wavy%20pattern&position=41&from_view=keyword&track=ais_hybrid&uuid=f72532e1-1b37-448b-8a4f-94c792397fad">Image by freepik</a>
     background-image: variables.$background-image;
+    background-repeat: no-repeat;
+    background-position: center;
     background-size: cover;
-    backdrop-filter: contrast(30%);
-    background-attachment: fixed;
+    margin: 0 auto;
     
     .site-content {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: stretch;
+        height: auto;
     }
 
     h1 {
@@ -40,6 +39,7 @@ body {
 
     h3 {
         margin: 0;
+        font-family: variables.$body-font;
     }
 
     h4 {

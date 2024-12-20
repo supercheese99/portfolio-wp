@@ -1,15 +1,25 @@
 // fonts
-$body-font: "Dosis", sans-serif;
-$heading-font: "Danfo", serif;
+@font-face {
+    font-family: 'TAN Ashford';
+    src: url('../fonts/tan_-_ashford-webfont.woff2') format('woff2'),
+         url('../fonts/tan_-_ashford-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+$body-font: "Poppins", sans-serif;
+// $heading-font: "Danfo", serif;
+$heading-font: "TAN Ashford", serif;
+
 
 // font weights
+$thin-weight: 300;
 $normal-weight: 400;
 $thicker-heading: 600;
 
 // colors
 $font-color: #291F1F;
-$background-color: #F9F4F4;
-$background-image: url("../media/7863.jpg");
+$background-color: #ffffff;
+$background-image: url("../media/background.png");
 $accent-color: pink;
 
 // shadows

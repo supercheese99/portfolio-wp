@@ -13,63 +13,18 @@
 
 #section-26 {
     height: 100dvh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     margin: 2rem 0rem;
-
-    @media (min-width: variables.$laptop-size) {
-        justify-content: start;
-    }
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
 
     .div-for-26 {
 
         .text-container{
-            position: relative;
-            top: 0;
-            left: 0;
-            width: 100dvw;
-            text-align: center;
-            background-color: variables.$background-color;
-            box-shadow: variables.$shadow-dark;
+            width: 50dvw;
             animation: load 1.5s ease-in;
 
-            p {
-                margin: 0;
-                padding: 1rem;
-            }
-
-            h1 {
-                padding-top: 1rem;
-            }
-        }
-
-        .image-container {
-            position: relative;
-            top: 0;
-            left: 0;
-            width: auto;
-            text-align: center;
-            margin-bottom: 4rem;
-            animation: load 1s ease-in;
-
-            img {
-                width: 60dvw;
-                border-radius: 50%;
-                box-shadow: variables.$shadow-dark;
-
-                @media (min-width: variables.$tablet-size) {
-                    width: 40dvw;
-                }
-
-                @media (min-width: variables.$laptop-size) {
-                    width: 30dvw;
-                }
-
-                @media (min-width: variables.$desktop-size) {
-                    width: 20dvw;
-                }
-            }
         }
     }
 
