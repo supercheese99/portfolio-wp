@@ -30,6 +30,22 @@
             }
 
         }
+
+        .stars {
+            width: 100px;
+            height: auto;
+            position: absolute;
+        }
+
+        .star-1 {
+            top: 20%;
+            left: 30%;
+        }
+
+        .star-2 {
+            right: 30%;
+            transform: scaleX(-1);
+        }
     }
 
 }

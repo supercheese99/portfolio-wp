@@ -461,6 +461,19 @@ footer .footer-copyright p {
 #section-26 .div-for-26 .text-container #title {
   letter-spacing: 0.3rem;
 }
+#section-26 .div-for-26 .stars {
+  width: 100px;
+  height: auto;
+  position: absolute;
+}
+#section-26 .div-for-26 .star-1 {
+  top: 20%;
+  left: 30%;
+}
+#section-26 .div-for-26 .star-2 {
+  right: 30%;
+  transform: scaleX(-1);
+}
 
 #single-project-page .entry-header {
   position: relative;
