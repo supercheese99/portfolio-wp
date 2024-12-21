@@ -1,0 +1,11 @@
+@use 'variables.scss';
+
+@mixin glassmorphs(
+) {
+  background-color: variables.$glass;
+  backdrop-filter: variables.$blur;
+  -webkit-backdrop-filter: variables.$blur;
+  border: variables.$border;
+  border-radius: variables.$border-radius;
+  box-shadow: variables.$shadow;
+}

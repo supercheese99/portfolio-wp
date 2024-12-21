@@ -27,16 +27,24 @@ body .site-content {
 }
 body h1 {
   margin: 0;
-  font-size: 5rem;
+  font-size: 2rem;
   font-family: "TAN Ashford", serif;
   text-shadow: 0px 1px 5px pink;
 }
 body h2 {
   font-family: "TAN Ashford", serif;
   margin: 0;
-  font-size: 4rem;
+  font-size: 1.5rem;
   text-shadow: 0px 1px 5px pink;
   color: #ffffff;
+}
+@media (min-width: 31.25rem) {
+  body h1 {
+    font-size: 3rem;
+  }
+  body h2 {
+    font-size: 2rem;
+  }
 }
 body h3 {
   margin: 0;
@@ -109,14 +117,27 @@ header {
   align-items: center;
   width: 100%;
   height: 10dvh;
-  background-color: #ffffff;
+  background-color: transparent;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-bottom: 1px solid #ffffff;
   box-shadow: 0px 4px 5px 0px #291F1F;
   overflow-x: clip;
+}
+header .site-branding {
+  margin-top: 5dvh;
+  height: 9dvh;
+}
+@media (min-width: 50rem) {
+  header .site-branding {
+    margin-top: 1dvh;
+  }
 }
 header .site-branding a {
   font-size: 1.25rem;
   text-decoration: none;
   font-family: "TAN Ashford", serif;
+  text-shadow: 0px 1px 5px pink;
 }
 @media (min-width: 50rem) {
   header .site-branding a {
@@ -152,7 +173,7 @@ header .main-navigation .menu-navigation-container {
   top: 100%;
   left: 0;
   width: 100%;
-  background-color: #ffffff;
+  background-image: url("../media/background.png");
   padding: 1rem 0rem 1rem 2rem;
   box-shadow: 0px 4px 5px 0px #291F1F;
   flex-direction: column;
@@ -164,6 +185,7 @@ header .main-navigation .menu-navigation-container {
     top: auto;
     left: auto;
     width: auto;
+    background-image: none;
     background-color: transparent;
     box-shadow: none;
     flex-direction: row;
@@ -178,9 +200,9 @@ header .main-navigation .menu-navigation-container ul {
   list-style: none;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
 }
-@media (min-width: 800px) {
+@media (min-width: 50rem) {
   header .main-navigation .menu-navigation-container ul {
     flex-direction: row;
     align-items: center;
@@ -190,7 +212,7 @@ header .main-navigation .menu-navigation-container ul {
 header .main-navigation .menu-navigation-container ul li {
   margin-bottom: 1rem;
 }
-@media (min-width: 800px) {
+@media (min-width: 50rem) {
   header .main-navigation .menu-navigation-container ul li {
     margin-bottom: 0;
     margin-right: 1rem;
@@ -204,6 +226,12 @@ header .main-navigation .menu-navigation-container ul a {
 }
 header .main-navigation .menu-navigation-container ul a:hover, header .main-navigation .menu-navigation-container ul a:active {
   text-decoration: line-through;
+  font-size: 1.5rem;
+}
+@media (min-width: 50rem) {
+  header .main-navigation .menu-navigation-container ul a:hover {
+    font-size: 1.25rem;
+  }
 }
 header .spotify-player {
   position: absolute;
@@ -219,7 +247,6 @@ header .spotify-player {
 footer {
   position: relative;
   bottom: 0;
-  background-image: linear-gradient(transparent, pink, #291F1F);
 }
 footer .footer-copyright {
   padding: 0rem 1rem;
@@ -228,7 +255,7 @@ footer .footer-copyright p {
   margin: 0;
   padding-bottom: 1rem;
   text-align: center;
-  color: #ffffff;
+  color: #291F1F;
 }
 
 #section-6 {
@@ -264,21 +291,21 @@ footer .footer-copyright p {
     column-gap: 1rem;
   }
 }
-#section-6 .div-for-6 .about-me-container .about-me {
-  border-radius: 0px 0px 10px 10px;
-  padding: 1rem;
+#section-6 .div-for-6 .about-me-container #person {
+  margin-top: 2rem;
 }
 #section-6 .div-for-6 .about-me-container #person h2 {
   color: #291F1F;
-  font-size: 2rem;
   text-align: left;
+}
+#section-6 .div-for-6 .about-me-container #person .about-me-post {
+  letter-spacing: 0.05rem;
 }
 #section-6 .div-for-6 #technologies {
   display: flex;
   flex-direction: column;
   text-align: center;
   align-items: center;
-  border-radius: 0px 0px 10px 10px;
   padding: 1rem;
 }
 #section-6 .div-for-6 #technologies .toolkit-icons-container {
@@ -309,11 +336,17 @@ footer .footer-copyright p {
   justify-content: space-evenly;
   align-items: center;
 }
+@media (min-width: 50rem) {
+  #section-9 {
+    height: 120dvh;
+  }
+}
 #section-9 .div-for-9 {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  gap: 1rem;
 }
 @media (min-width: 600px) {
   #section-9 .div-for-9 {
@@ -325,25 +358,28 @@ footer .footer-copyright p {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
+  flex: none;
   width: 300px;
-  height: 350px;
+  height: 300px;
   text-align: left;
-  padding: 0.5rem;
+  padding: 1rem;
   margin-bottom: 1rem;
+  background-color: transparent;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 5px 0px #291F1F;
 }
-@media (min-width: 600px) {
+@media (min-width: 50rem) {
   #section-9 .div-for-9 .project-item {
-    width: 45%;
-  }
-}
-@media (min-width: 62.5rem) {
-  #section-9 .div-for-9 .project-item {
-    height: 300px;
+    height: 400px;
   }
 }
 #section-9 .div-for-9 .project-item img {
-  width: 200px;
-  height: auto;
+  width: auto;
+  height: 100px;
   border-radius: 10px;
   align-self: center;
 }
@@ -366,9 +402,6 @@ footer .footer-copyright p {
   color: #ffffff;
   border: 2px solid pink;
 }
-#section-9 .div-for-9 .project-item:last-child {
-  margin-bottom: 0;
-}
 
 #section-11 {
   width: auto;
@@ -376,12 +409,7 @@ footer .footer-copyright p {
   padding-top: 5rem;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-}
-@media (min-width: 50rem) {
-  #section-11 {
-    justify-content: space-evenly;
-  }
+  justify-content: space-evenly;
 }
 #section-11 .div-for-11 {
   display: flex;
@@ -423,18 +451,23 @@ footer .footer-copyright p {
   height: 100dvh;
   margin: 2rem 0rem;
   display: flex;
-  flex-direction: row-reverse;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 #section-26 .div-for-26 .text-container {
-  width: 50dvw;
   animation: load 1.5s ease-in;
+}
+#section-26 .div-for-26 .text-container #title {
+  letter-spacing: 0.3rem;
 }
 
 #single-project-page .entry-header {
   position: relative;
   z-index: 1;
+  box-shadow: none;
+  border: none;
+  margin-top: 2rem;
 }
 #single-project-page .entry-header h1 {
   font-size: 2.25rem;
@@ -448,7 +481,7 @@ footer .footer-copyright p {
 #single-project-page .thumbnail-container img {
   width: 300px;
   height: auto;
-  box-shadow: 10px 10px 5px -5px #291F1F;
+  box-shadow: 0px 4px 5px 0px #291F1F;
 }
 #single-project-page .swiper-wrapper {
   margin-top: 1rem;
@@ -481,30 +514,29 @@ footer .footer-copyright p {
 }
 #single-project-page .wp-block-buttons .wp-block-button .wp-block-button__link {
   color: #291F1F;
-  background-color: #ffffff;
-  border: 2px solid #291F1F;
+  background-color: transparent;
+  border: 1px solid #ffffff;
 }
 #single-project-page .wp-block-buttons .wp-block-button .wp-block-button__link:hover {
   color: #ffffff;
   background-color: #291F1F;
-  border: 2px solid pink;
+  border: 1px solid pink;
 }
 #single-project-page .project-descr {
   text-align: center;
-  background-color: pink;
   margin: 2rem 0rem;
   max-width: 320px;
   padding: 1rem;
-  border-radius: 10px;
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-  box-shadow: 0px 4px 5px 0px #291F1F;
 }
 #single-project-page .tabs-container {
   max-width: 500px;
+  height: 120dvh;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   position: relative;
   left: 50%;
   transform: translateX(-50%);
@@ -518,26 +550,31 @@ footer .footer-copyright p {
 }
 #single-project-page .tabs-container .tabs {
   display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
   justify-content: center;
   margin: 2rem 0rem 0rem 0rem;
+  align-items: center;
+}
+@media (min-width: 50rem) {
+  #single-project-page .tabs-container .tabs {
+    flex-direction: row;
+  }
 }
 #single-project-page .tabs-container .tabs h3 {
-  background-color: #ffffff;
-  border: 2px solid #291F1F;
+  display: flex;
+  align-items: center;
+  width: 45dvw;
+  height: 50px;
+  border: 1px solid #ffffff;
   border-radius: 10px;
   padding: 0.25rem;
   cursor: pointer;
 }
-#single-project-page .tabs-container .tabs h3:not(:first-of-type) {
-  border-left: none;
-}
 #single-project-page .tabs-container .tabs h3:hover {
   color: #ffffff;
   background-color: #291F1F;
-  border: 2px solid pink;
-}
-#single-project-page .tabs-container .tabs h3:hover:not(:first-of-type) {
-  border-left: none;
+  border: 1px solid pink;
 }
 #single-project-page .tabs-container .tabs-info {
   position: relative;
@@ -546,13 +583,16 @@ footer .footer-copyright p {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: pink;
+  background-color: transparent;
   padding: 0.5rem;
   border-radius: 10px;
+  border: 1px solid #ffffff;
   box-shadow: 0px 4px 5px 0px #291F1F;
 }
 
 .more-posts {
+  position: relative;
+  bottom: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -569,14 +609,19 @@ footer .footer-copyright p {
   justify-content: space-between;
   font-family: "TAN Ashford", serif;
   color: #291F1F;
-  text-decoration: none;
 }
 @media (min-width: 31.25rem) {
   .more-posts .project-links {
     flex-direction: row;
   }
 }
-.more-posts .project-links a:hover {
+.more-posts .project-links h4 {
+  font-size: 1.25rem;
+}
+.more-posts .project-links h4 a {
+  text-decoration: none;
+}
+.more-posts .project-links h4 a:hover {
   color: #ffffff;
   text-shadow: 0px 1px 5px pink;
 }

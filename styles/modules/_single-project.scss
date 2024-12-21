@@ -5,6 +5,9 @@
     .entry-header {
         position: relative;
         z-index: 1;
+        box-shadow: none;
+        border: none;
+        margin-top: 2rem;
 
         h1 {
             font-size: 2.25rem;
@@ -20,7 +23,7 @@
         img {
             width: 300px;
             height: auto;
-            box-shadow: variables.$shadow-dark;
+            box-shadow: variables.$shadow;
         }
     }
 
@@ -36,7 +39,6 @@
 
             max-width: auto;
             max-height: 500px;
-            // object-fit: contain;
         }
 
         .wp-block-video {
@@ -66,13 +68,13 @@
 
             .wp-block-button__link {
                 color: variables.$font-color;
-                background-color: variables.$background-color;
-                border: 2px solid variables.$font-color;
+                background-color: variables.$glass;
+                border: variables.$border;
 
                 &:hover {
                     color: variables.$background-color;
                     background-color: variables.$font-color;
-                    border: 2px solid variables.$accent-color;
+                    border: 1px solid variables.$accent-color;
                 }
             }
         }
@@ -81,24 +83,22 @@
     // description
     .project-descr {
         text-align: center;
-        background-color: variables.$accent-color;
         margin: 2rem 0rem;
         max-width: 320px;
         padding: 1rem;
-        border-radius: 10px;
 
         position: relative;
         left: 50%;
         transform: translateX(-50%);
-
-        box-shadow: variables.$shadow;
     }
 
     // tabs
     .tabs-container {
         max-width: 500px;
+        height: 120dvh;
         display: flex;
         flex-direction: column;
+        justify-content: flex-start;
         position: relative;
         left: 50%;
         transform: translateX(-50%);
@@ -111,28 +111,30 @@
 
         .tabs {
             display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
             justify-content: center;
             margin: 2rem 0rem 0rem 0rem;
+            align-items: center;
+
+            @media (min-width: variables.$laptop-size) {
+                flex-direction: row;
+            }
 
             h3 {
-                background-color: variables.$background-color;
-                border: 2px solid variables.$font-color;
-                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                width: 45dvw;
+                height: 50px;
+                border: variables.$border;
+                border-radius: variables.$border-radius;
                 padding: 0.25rem;
                 cursor: pointer;
-
-                &:not(:first-of-type) {
-                    border-left: none;
-                }
 
                 &:hover {
                     color: variables.$background-color;
                     background-color: variables.$font-color;
-                    border: 2px solid variables.$accent-color;
-
-                    &:not(:first-of-type) {
-                        border-left: none;
-                    }
+                    border: 1px solid variables.$accent-color;
                 }
             }
         }
@@ -144,9 +146,10 @@
                 position: absolute;
                 top: 0;
                 left: 0;
-                background-color: variables.$accent-color;
+                background-color: variables.$glass;
                 padding: 0.5rem;
-                border-radius: 10px;
+                border-radius: variables.$border-radius;
+                border: variables.$border;
                 box-shadow: variables.$shadow;
             }
         }
@@ -155,6 +158,8 @@
 
 // more projects section
 .more-posts {
+    position: relative;
+    bottom: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -172,17 +177,23 @@
         justify-content: space-between;
         font-family: variables.$heading-font;
         color: variables.$font-color;
-        text-decoration: none;
         
         @media (min-width: variables.$tablet-size) {
             flex-direction: row;
         }
 
-        a {
-            &:hover {
-                color: variables.$background-color;
-                text-shadow: variables.$text-shadow;
+        h4 {
+            font-size: 1.25rem;
+
+            a {
+                text-decoration: none;
+                &:hover {
+                    color: variables.$background-color;
+                    text-shadow: variables.$text-shadow;
+                }
             }
         }
+
+
     }
 }

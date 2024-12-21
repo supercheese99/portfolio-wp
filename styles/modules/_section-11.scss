@@ -7,11 +7,7 @@
     padding-top: 5rem;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-
-    @media (min-width: variables.$laptop-size) {
-        justify-content: space-evenly;
-    }
+    justify-content: space-evenly;
 
     .div-for-11 {
         display: flex;

@@ -5,11 +5,10 @@
          url('../fonts/tan_-_ashford-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-  }
-$body-font: "Poppins", sans-serif;
-// $heading-font: "Danfo", serif;
-$heading-font: "TAN Ashford", serif;
+}
 
+$body-font: "Poppins", sans-serif;
+$heading-font: "TAN Ashford", serif;
 
 // font weights
 $thin-weight: 300;
@@ -21,15 +20,19 @@ $font-color: #291F1F;
 $background-color: #ffffff;
 $background-image: url("../media/background.png");
 $accent-color: pink;
+$glass: transparent;
 
 // shadows
 $shadow: 0px 4px 5px 0px $font-color;
-$shadow-dark: 10px 10px 5px -5px $font-color;
+$shadow-invert: 4px 0px 0px 5px $font-color;
 $text-shadow: 0px 1px 5px $accent-color;
 
-//border radius for about me section
-$border-radius: 10px 10px 0px 0px;
-$border-radius-invert: 0px 0px 10px 10px;
+// blur
+$blur: blur(5px);
+
+//borders
+$border-radius: 10px;
+$border: 1px solid $background-color;
 
 // media queries
 $tablet-size: 31.25rem; // 500px

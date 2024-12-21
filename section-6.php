@@ -1,29 +1,19 @@
 <!-- section 6 - about me -->
 <div class="about-me-container">
     <div class="about-me hidden" id="person">
-        <h2>Hi! I'm Oliwia!</h2>
-        <p>I am a British Columbia-based front-end web developer. I have graduated from British Columbia Institute of Technology's Front-End Web Developer certificate program. During my studies, I have completed multiple projects, which made me learn a thing or two about the complexity of website creation as well as teamwork.</p>
+        <?php
+        $post_id = 129;
+        $about_me_post = get_post($post_id);
 
-        <p>In my free time, I like to sing and dance (especially to Beyoncé's songs), as well as walk with my dog and watch her chase the ducks on the lake.
-        </p>
+        if ( $about_me_post ) :
+            echo '<h1>' . esc_html( $about_me_post->post_title ) . '</h1>';
+            echo apply_filters( 'the_content', $about_me_post->post_content );
 
-        <p>In the near future, I'd like to start learning Korean. Or Japanese. Or French. Or Spanish...</p>
-    </div>
+        else :
+            echo '<p>Sorry, no content available. ;(</p>';
 
-    <div class="about-me hidden" id="developer">
-        <h3>As a Developer</h3>
-        <p>As a junior front-end developer, I am passionate about creating functional, user-friendly digital experiences while constantly learning and improving my craft. With a solid foundation in HTML, CSS/SASS, and JavaScript, I'm committed to building websites and applications that are not only visually appealing but also accessible. My growing proficiency in React, alongside experience with Wordpress, enables me to develop responsive and dynamic interfaces.</p>
-
-        <p>
-        Whether collaborating with a team or working independently, I am eager to contribute to high-quality projects, always striving to learn and grow.</p>
-    </div>
-
-    <div class="about-me hidden" id="designer">
-        <h3>As a Designer</h3>
-        <p>I strive for creative expression in every project I take on. I approach design with a sense of curiosity, always looking for ways to create something unique. Among my friends, I am known to be a little unconventional and they often associate me with colorfulness and positivity.</p>
-
-        <p>I’m passionate about balancing creativity with functionality and constantly learning new techniques to stay at the forefront of design trends. Whether I’m working on clean, modern layouts or vibrant, bold concepts, I’m always eager to push the limits of what design can achieve while bringing a positive, colorful energy to everything I create.</p>
-
+        endif;
+    ?>
     </div>
 </div>
 

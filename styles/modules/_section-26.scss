@@ -15,15 +15,19 @@
     height: 100dvh;
     margin: 2rem 0rem;
     display: flex;
-    flex-direction: row-reverse;
     align-items: center;
     justify-content: center;
+    text-align: center;
 
     .div-for-26 {
 
         .text-container{
-            width: 50dvw;
             animation: load 1.5s ease-in;
+
+            #title {
+                
+                letter-spacing: 0.3rem;
+            }
 
         }
     }
